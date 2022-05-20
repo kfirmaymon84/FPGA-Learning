@@ -1,0 +1,2 @@
+1 ps: ***> test String to file
+50001 ps: - 45

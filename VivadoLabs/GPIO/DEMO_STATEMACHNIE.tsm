@@ -1,0 +1,60 @@
+##################################################
+#
+# For info on creating trigger state machines:
+#   1) In the main Vivado menu bar, select
+#      Window > Language Templates
+#   2) In the Templates window, select
+#      Debug > Trigger State Machine
+#   3) Refer to the entry 'Info' for an overview
+#      of the trigger state machine language.
+#
+# More information can be found in this document:
+#tmrCntr_reg
+#   Vivado Design Suite User Guide: Programming
+#   and Debugging (UG908)
+#
+##################################################
+state S1:
+  if (SW_IBUF == 8'u127)  then
+   set_flag $flag0;
+ increment_counter $counter0 ;   
+     goto S2; 
+
+  else
+
+    goto S1;
+ endif
+ state S2:
+   if (SW_IBUF == 8'u124)  then
+     set_flag $flag1;   
+     increment_counter $counter0 ;
+      goto S3; 
+ 
+   else
+ 
+     goto S2;
+  endif
+  state S3:
+     if (SW_IBUF == 8'u125)   then
+       set_flag $flag2;  
+       increment_counter $counter0 ;
+        goto S4;
+        
+               
+     else
+   
+       goto S3;
+    endif
+   state S4:
+         if ($counter0 == 16'u6)   then
+           set_flag $flag3;            
+            trigger; 
+                 
+         else
+           clear_flag $flag0;
+           clear_flag $flag1;
+           clear_flag $flag2;
+           goto S1;
+        endif 
+    
+    

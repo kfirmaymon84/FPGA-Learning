@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="HistogramMedian_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="HistogramMedian_TB" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="25,642.350 ns"></ZoomStartTime>
+      <ZoomEndTime time="25,718.251 ns"></ZoomEndTime>
+      <Cursor1Time time="25,679.150 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="214"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wave_markers>
+      <marker time="20495000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/HistogramMedian_TB/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HistogramMedian_TB/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HistogramMedian_TB/SW" type="array">
+      <obj_property name="ElementShortName">SW[15:0]</obj_property>
+      <obj_property name="ObjectShortName">SW[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group118" type="group">
+      <obj_property name="label">HistAndMedian</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/MedianReady" type="logic">
+         <obj_property name="ElementShortName">MedianReady</obj_property>
+         <obj_property name="ObjectShortName">MedianReady</obj_property>
+         <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/HistReady" type="logic">
+         <obj_property name="ElementShortName">HistReady</obj_property>
+         <obj_property name="ObjectShortName">HistReady</obj_property>
+      </wvobject>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/HistVal" type="array">
+         <obj_property name="ElementShortName">HistVal[7:0]</obj_property>
+         <obj_property name="ObjectShortName">HistVal[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/HistAmount" type="array">
+         <obj_property name="ElementShortName">HistAmount[9:0]</obj_property>
+         <obj_property name="ObjectShortName">HistAmount[9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/Median" type="array">
+         <obj_property name="ElementShortName">Median[7:0]</obj_property>
+         <obj_property name="ObjectShortName">Median[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/HistogramMedian_TB/UUT/mainCounter" type="array">
+      <obj_property name="ElementShortName">mainCounter[11:0]</obj_property>
+      <obj_property name="ObjectShortName">mainCounter[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HistogramMedian_TB/UUT/state" type="other">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="group15" type="group">
+      <obj_property name="label">ROM IO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/romAdd" type="array">
+         <obj_property name="ElementShortName">romAdd[10:0]</obj_property>
+         <obj_property name="ObjectShortName">romAdd[10:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/romDataOutRamDataIn" type="array">
+         <obj_property name="ElementShortName">romDataOutRamDataIn[7:0]</obj_property>
+         <obj_property name="ObjectShortName">romDataOutRamDataIn[7:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group24" type="group">
+      <obj_property name="label">RAM IO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/ramDataIn" type="array">
+         <obj_property name="ElementShortName">ramDataIn[9:0]</obj_property>
+         <obj_property name="ObjectShortName">ramDataIn[9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/ramDataOut" type="array">
+         <obj_property name="ElementShortName">ramDataOut[9:0]</obj_property>
+         <obj_property name="ObjectShortName">ramDataOut[9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/ramAddressMuxOut" type="array">
+         <obj_property name="ElementShortName">ramAddressMuxOut[7:0]</obj_property>
+         <obj_property name="ObjectShortName">ramAddressMuxOut[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/addresIdx" type="array">
+         <obj_property name="ElementShortName">addresIdx[7:0]</obj_property>
+         <obj_property name="ObjectShortName">addresIdx[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/ramWea" type="array">
+         <obj_property name="ElementShortName">ramWea[0:0]</obj_property>
+         <obj_property name="ObjectShortName">ramWea[0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/ramEnW" type="logic">
+         <obj_property name="ElementShortName">ramEnW</obj_property>
+         <obj_property name="ObjectShortName">ramEnW</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/HistogramMedian_TB/UUT/ramEnR" type="logic">
+         <obj_property name="ElementShortName">ramEnR</obj_property>
+         <obj_property name="ObjectShortName">ramEnR</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/HistogramMedian_TB/UUT/numToDisplay" type="array">
+      <obj_property name="ElementShortName">numToDisplay[31:0]</obj_property>
+      <obj_property name="ObjectShortName">numToDisplay[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+</wave_config>

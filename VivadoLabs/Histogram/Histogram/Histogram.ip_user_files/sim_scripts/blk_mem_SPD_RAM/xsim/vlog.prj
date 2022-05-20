@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../Histogram.gen/sources_1/ip/blk_mem_SPD_RAM/sim/blk_mem_SPD_RAM.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

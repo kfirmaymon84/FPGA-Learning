@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="UART_led_full_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="string_utilities_sim_pkg" />
+            <top_module name="string_utilities_synth_pkg" />
+            <top_module name="tb_fifo_pkg" />
+            <top_module name="time_utilities_pkg" />
+            <top_module name="uart_led_full_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/uart_led_full_tb/clk_rx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_rx</obj_property>
+      <obj_property name="ObjectShortName">clk_rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_led_full_tb/rst_clk_rx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst_clk_rx</obj_property>
+      <obj_property name="ObjectShortName">rst_clk_rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_led_full_tb/data_to_send" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_to_send[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_to_send[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_led_full_tb/data_sent" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data_sent</obj_property>
+      <obj_property name="ObjectShortName">data_sent</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_led_full_tb/rxd_clk_rx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rxd_clk_rx</obj_property>
+      <obj_property name="ObjectShortName">rxd_clk_rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_led_full_tb/rx_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_data[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_led_full_tb/new_data_present" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">new_data_present</obj_property>
+      <obj_property name="ObjectShortName">new_data_present</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_led_full_tb/last_datum" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">last_datum[7:0]</obj_property>
+      <obj_property name="ObjectShortName">last_datum[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_seveSegDriver_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_seveSegDriver" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="12.000225440 ms"></ZoomStartTime>
+      <ZoomEndTime time="23.001225440 ms"></ZoomEndTime>
+      <Cursor1Time time="12.088563294 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/tb_seveSegDriver/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_seveSegDriver/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_seveSegDriver/numIn" type="array">
+      <obj_property name="ElementShortName">numIn[22:0]</obj_property>
+      <obj_property name="ObjectShortName">numIn[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_seveSegDriver/dp" type="array">
+      <obj_property name="ElementShortName">dp[2:0]</obj_property>
+      <obj_property name="ObjectShortName">dp[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_seveSegDriver/segOut" type="array">
+      <obj_property name="ElementShortName">segOut[7:0]</obj_property>
+      <obj_property name="ObjectShortName">segOut[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_seveSegDriver/segEn" type="array">
+      <obj_property name="ElementShortName">segEn[7:0]</obj_property>
+      <obj_property name="ObjectShortName">segEn[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_seveSegDriver/dut/counter" type="other">
+      <obj_property name="ElementShortName">counter</obj_property>
+      <obj_property name="ObjectShortName">counter</obj_property>
+   </wvobject>
+</wave_config>

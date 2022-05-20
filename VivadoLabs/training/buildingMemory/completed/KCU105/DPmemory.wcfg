@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/training/dsgnVHDL/labs/Spartan3E/buildingMemory/DPmemory_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="dpmemory_tb" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <wvobject fp_name="divider66" type="divider">
+      <obj_property name="label">Port A</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dpmemory_tb/porta_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">porta_clk</obj_property>
+      <obj_property name="ObjectShortName">porta_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dpmemory_tb/porta_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">porta_addr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">porta_addr[9:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dpmemory_tb/porta_writeenable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">porta_writeenable</obj_property>
+      <obj_property name="ObjectShortName">porta_writeenable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dpmemory_tb/porta_datain" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">porta_datain[7:0]</obj_property>
+      <obj_property name="ObjectShortName">porta_datain[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dpmemory_tb/porta_dataout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">porta_dataout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">porta_dataout[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider65" type="divider">
+      <obj_property name="label">Port B</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dpmemory_tb/portb_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">portb_clk</obj_property>
+      <obj_property name="ObjectShortName">portb_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dpmemory_tb/portb_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">portb_addr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">portb_addr[9:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dpmemory_tb/portb_writeenable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">portb_writeenable</obj_property>
+      <obj_property name="ObjectShortName">portb_writeenable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dpmemory_tb/portb_datain" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">portb_datain[7:0]</obj_property>
+      <obj_property name="ObjectShortName">portb_datain[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dpmemory_tb/portb_dataout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">portb_dataout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">portb_dataout[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>
