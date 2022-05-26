@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="DSP_Calc_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="DSP_Calc_TB" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="681.767 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,181.767 ns"></ZoomEndTime>
+      <Cursor1Time time="810.189 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="206"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/DSP_Calc_TB/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DSP_Calc_TB/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DSP_Calc_TB/DATA_IN_A" type="array">
+      <obj_property name="ElementShortName">DATA_IN_A[15:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_IN_A[15:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DSP_Calc_TB/DATA_IN_B" type="array">
+      <obj_property name="ElementShortName">DATA_IN_B[15:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_IN_B[15:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DSP_Calc_TB/SEL" type="array">
+      <obj_property name="ElementShortName">SEL[2:0]</obj_property>
+      <obj_property name="ObjectShortName">SEL[2:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DSP_Calc_TB/DATA_OUT" type="array">
+      <obj_property name="ElementShortName">DATA_OUT[19:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_OUT[19:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="group13" type="group">
+      <wvobject fp_name="/DSP_Calc_TB/UUT/DATA_OUT" type="array">
+         <obj_property name="ElementShortName">DATA_OUT[19:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_OUT[19:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/dataInA" type="array">
+         <obj_property name="ElementShortName">dataInA[17:0]</obj_property>
+         <obj_property name="ObjectShortName">dataInA[17:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/dataInB" type="array">
+         <obj_property name="ElementShortName">dataInB[17:0]</obj_property>
+         <obj_property name="ObjectShortName">dataInB[17:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/dataInC" type="array">
+         <obj_property name="ElementShortName">dataInC[47:0]</obj_property>
+         <obj_property name="ObjectShortName">dataInC[47:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/dataOut" type="array">
+         <obj_property name="ElementShortName">dataOut[47:0]</obj_property>
+         <obj_property name="ObjectShortName">dataOut[47:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/opSel" type="array">
+         <obj_property name="ElementShortName">opSel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">opSel[1:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,117 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
+| Date         : Tue Dec 01 16:56:35 2015
+| Host         : XHDVARSHABA30 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7k325tffg900-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'clk_core'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of clk_core from xilinx.com:ip:clk_wiz:5.1 (Rev. 6) to xilinx.com:ip:clk_wiz:5.2
+
+
+
+
+
+
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.1 (win64) Build 1215546 Mon Apr 27 19:22:08 MDT 2015
+| Date         : Wed Jun 10 18:12:28 2015
+| Host         : XHDVENKATE30 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7k325tffg900-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'clk_core'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of clk_core (xilinx.com:ip:clk_wiz:5.1) from (Rev. 4) to (Rev. 6)
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.3 (win64) Build 1034051 Fri Oct  3 17:14:12 MDT 2014
+| Date         : Fri Nov 14 14:19:05 2014
+| Host         : XHDPVENUGO32 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7k325tffg900-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'clk_core'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of clk_core (xilinx.com:ip:clk_wiz:5.1) from (Rev. 2) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.1 (win64) Build 881834 Fri Apr  4 14:15:54 MDT 2014
+| Date         : Thu Jul 17 01:45:21 2014
+| Host         : XHDPVENUGO32 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7k325tffg900-2
+-----------------------------------------------------------------------------------
+
+Upgrade Log for IP 'clk_core'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of clk_core from xilinx.com:ip:clk_wiz:5.0 (Rev. 1) to xilinx.com:ip:clk_wiz:5.1 (Rev. 2)
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading IP 'clk_core'.
+
+
+-upgrade has added interface 's_axi_lite'
+-upgrade has added interface 's_axi_aclk'
+-upgrade has added interface 's_axi_resetn'
+-upgrade has added interface 'intr'
+-upgrade has added interface 's_drp'
+
+3. Upgrade messages
+-------------------
+
+Set parameter PRIMITIVE to value MMCM
+Added parameter ENABLE_CDDC with value false
+Added parameter CDDCDONE_PORT with value cddcdone
+Added parameter CDDCREQ_PORT with value cddcreq
+Added parameter CLKOUT1_JITTER with value 0.0
+Added parameter CLKOUT1_PHASE_ERROR with value 0.0
+Added parameter CLKOUT2_JITTER with value 0.0
+Added parameter CLKOUT2_PHASE_ERROR with value 0.0
+Added parameter CLKOUT3_JITTER with value 0.0
+Added parameter CLKOUT3_PHASE_ERROR with value 0.0
+Added parameter CLKOUT4_JITTER with value 0.0
+Added parameter CLKOUT4_PHASE_ERROR with value 0.0
+Added parameter CLKOUT5_JITTER with value 0.0
+Added parameter CLKOUT5_PHASE_ERROR with value 0.0
+Added parameter CLKOUT6_JITTER with value 0.0
+Added parameter CLKOUT6_PHASE_ERROR with value 0.0
+Added parameter CLKOUT7_JITTER with value 0.0
+Added parameter CLKOUT7_PHASE_ERROR with value 0.0
+Added parameter INTERFACE_SELECTION with value Enable_AXI
+Set parameter USE_BOARD_FLOW to value false
+Set parameter CLK_IN1_BOARD_INTERFACE to value Custom
+Set parameter CLK_IN2_BOARD_INTERFACE to value Custom
+

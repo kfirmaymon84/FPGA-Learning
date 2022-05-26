@@ -1,0 +1,120 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
+| Date         : Tue Dec 01 16:59:23 2015
+| Host         : XHDVARSHABA30 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7k325tffg900-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ila_tx_side'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of ila_tx_side from xilinx.com:ip:ila:5.1 to xilinx.com:ip:ila:6.0
+
+
+
+
+
+
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.1 (win64) Build 1215546 Mon Apr 27 19:22:08 MDT 2015
+| Date         : Wed Jun 10 18:24:13 2015
+| Host         : XHDVENKATE30 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7k325tffg900-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ila_tx_side'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of ila_tx_side from xilinx.com:ip:ila:5.0 to xilinx.com:ip:ila:5.1
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading IP 'ila_tx_side'.
+
+
+-upgrade has added interface 'signal_clock2x'
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.3 (win64) Build 1034051 Fri Oct  3 17:14:12 MDT 2014
+| Date         : Fri Nov 14 14:19:41 2014
+| Host         : XHDPVENUGO32 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7k325tffg900-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ila_tx_side'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of ila_tx_side from xilinx.com:ip:ila:4.0 to xilinx.com:ip:ila:5.0
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading IP 'ila_tx_side'.
+
+
+-upgrade has added interface 'SLOT_0_AXIS'
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.1 (win64) Build 881834 Fri Apr  4 14:15:54 MDT 2014
+| Date         : Thu Jul 17 01:46:22 2014
+| Host         : XHDPVENUGO32 running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7k325tffg900-2
+-----------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ila_tx_side'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of ila_tx_side from xilinx.com:ip:ila:2.1 (Rev. 1) to xilinx.com:ip:ila:4.0
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading IP 'ila_tx_side'.
+
+
+-upgrade has added interface 'TRIG_IN'
+-upgrade has added interface 'TRIG_OUT'
+-upgrade has added interface 'signal_clock'
+-upgrade has added interface 'SLOT_0_AXI'
+-upgrade has renamed port 'CLK' as 'clk'
+-upgrade has renamed port 'PROBE0' as 'probe0'
+-upgrade has renamed port 'PROBE1' as 'probe1'
+-upgrade has renamed port 'PROBE2' as 'probe2'
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading IP 'ila_tx_side'. These changes may impact your design.
+
+
+-upgraded port order differs after port 'clk'
+
