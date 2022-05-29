@@ -99,6 +99,23 @@ begin
     SEL <= "001";
     wait for 100 ns;
     
+    -- MUL
+    DATA_IN_A <= X"0004";
+    DATA_IN_B <= X"0004";
+    SEL <= "010";
+    wait for 100 ns;
+    
+    -- MUL
+    DATA_IN_A <= X"0001";
+    DATA_IN_B <= X"0001";
+    SEL <= "010";
+    wait for 100 ns;
+    
+    -- MUL
+    DATA_IN_A <= X"0005";
+    DATA_IN_B <= X"000A";
+    SEL <= "010";
+    wait for 100 ns;
     wait;
     end process;
 end Behavioral;

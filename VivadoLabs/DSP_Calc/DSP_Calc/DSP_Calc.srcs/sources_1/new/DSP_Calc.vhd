@@ -72,8 +72,11 @@ begin
                         dataInA <=  "00" & DATA_IN_A;
                         dataInB <= (others => '0');
                         dataInC <=  X"00000000" & DATA_IN_B; 
-                    when "010" => 
+                    when "010" => -- MUL A*B
                         opSel <= "10";
+                        dataInA <=  "00" & DATA_IN_A;
+                        dataInB <=  "00" & DATA_IN_B;
+                        dataInC <= (others => '0');
                     when "011" => 
                         opSel <= "11";
                     when others => opSel <= "00";

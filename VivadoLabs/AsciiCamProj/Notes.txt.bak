@@ -1,0 +1,14 @@
+
+I2C -> SCCB Config
+* Main goal is to setup sensor to work on Output data im format - RGB 565.
+Good to test -> REG 0x0A -- Product ID = 76,  REG 0x0B -- Version = 70, DEV ADD 0x42 Write,0x43 Read (7BIT (shift left by 1)-> 0x42). #### Done - (version number found is 0x73!!!)
+
+1. Set REG 0x12 -- COM7  to = 0x04. RGB format.
+2. Set REG 0x40 -- COM15 to = 0xD0. 565 format.
+
+
+
+Task1 - setup STM32 to send clock of 24MHZ and config SCCB registers. 24Mhz Done -> PA8 pin, ####DONE####
+Task2 - Sample frame output format. 
+Task3 - make  TEXTIO file to represent 1 frame.
+Task4 - implement VHDL Driver for sample frame from textio file and save it to new textio file, comper with img to see if done correct.

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="OV7670_Sim_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="OV7670_Sim_TB" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="383.500001 us"></ZoomEndTime>
+      <Cursor1Time time="1,425.605200 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="206"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="5" />
+   <wave_markers>
+      <marker time="1425605200" label="" />
+      <marker time="1372280400" label="" />
+   </wave_markers>
+   <wvobject fp_name="/OV7670_Sim_TB/PCLK" type="logic">
+      <obj_property name="ElementShortName">PCLK</obj_property>
+      <obj_property name="ObjectShortName">PCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/OV7670_Sim_TB/DIN" type="array">
+      <obj_property name="ElementShortName">DIN[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DIN[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/OV7670_Sim_TB/VSYNC" type="logic">
+      <obj_property name="ElementShortName">VSYNC</obj_property>
+      <obj_property name="ObjectShortName">VSYNC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/OV7670_Sim_TB/HS" type="logic">
+      <obj_property name="ElementShortName">HS</obj_property>
+      <obj_property name="ObjectShortName">HS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/OV7670_Sim_TB/XCLK" type="logic">
+      <obj_property name="ElementShortName">XCLK</obj_property>
+      <obj_property name="ObjectShortName">XCLK</obj_property>
+   </wvobject>
+</wave_config>
