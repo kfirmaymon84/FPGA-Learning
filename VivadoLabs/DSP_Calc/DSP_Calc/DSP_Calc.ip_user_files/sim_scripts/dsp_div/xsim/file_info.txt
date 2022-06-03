@@ -1,0 +1,1 @@
+dsp_div.vhd,vhdl,xil_defaultlib,../../../../DSP_Calc.gen/sources_1/ip/dsp_div/sim/dsp_div.vhd,

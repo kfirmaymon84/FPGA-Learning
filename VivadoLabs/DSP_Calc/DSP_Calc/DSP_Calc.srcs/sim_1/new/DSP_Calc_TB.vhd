@@ -54,7 +54,7 @@ begin
     UUT: DSP_Calc port map (CLK => CLK, RESET => RESET, DATA_IN_A => DATA_IN_A, DATA_IN_B => DATA_IN_B, SEL => SEL, DATA_OUT => DATA_OUT);
 
     CLK <= not CLK after 5ns;
-    RESET <= '1', '0' after 100ns;
+    RESET <= '1', '0' after 20ns;
     
     process
     begin

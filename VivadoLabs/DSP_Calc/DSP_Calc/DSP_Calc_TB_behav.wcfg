@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,262.166 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,415.567 ns"></ZoomEndTime>
-      <Cursor1Time time="1,390.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="100.001 ns"></ZoomEndTime>
+      <Cursor1Time time="45.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="206"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="7" />
    <wvobject fp_name="/DSP_Calc_TB/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -30,12 +30,10 @@
    <wvobject fp_name="/DSP_Calc_TB/DATA_IN_A" type="array">
       <obj_property name="ElementShortName">DATA_IN_A[15:0]</obj_property>
       <obj_property name="ObjectShortName">DATA_IN_A[15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/DSP_Calc_TB/DATA_IN_B" type="array">
       <obj_property name="ElementShortName">DATA_IN_B[15:0]</obj_property>
       <obj_property name="ObjectShortName">DATA_IN_B[15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/DSP_Calc_TB/SEL" type="array">
       <obj_property name="ElementShortName">SEL[2:0]</obj_property>
@@ -44,6 +42,45 @@
    <wvobject fp_name="/DSP_Calc_TB/DATA_OUT" type="array">
       <obj_property name="ElementShortName">DATA_OUT[19:0]</obj_property>
       <obj_property name="ObjectShortName">DATA_OUT[19:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="group17" type="group">
+      <obj_property name="label">New Group</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/N" type="array">
+         <obj_property name="ElementShortName">N[3:0]</obj_property>
+         <obj_property name="ObjectShortName">N[3:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/D" type="array">
+         <obj_property name="ElementShortName">D[3:0]</obj_property>
+         <obj_property name="ObjectShortName">D[3:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/state" type="other">
+         <obj_property name="ElementShortName">state</obj_property>
+         <obj_property name="ObjectShortName">state</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/DSPSUB_A" type="array">
+         <obj_property name="ElementShortName">DSPSUB_A[17:0]</obj_property>
+         <obj_property name="ObjectShortName">DSPSUB_A[17:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/DSPSUB_B" type="array">
+         <obj_property name="ElementShortName">DSPSUB_B[17:0]</obj_property>
+         <obj_property name="ObjectShortName">DSPSUB_B[17:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/DSPSUB_P" type="array">
+         <obj_property name="ElementShortName">DSPSUB_P[35:0]</obj_property>
+         <obj_property name="ObjectShortName">DSPSUB_P[35:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>

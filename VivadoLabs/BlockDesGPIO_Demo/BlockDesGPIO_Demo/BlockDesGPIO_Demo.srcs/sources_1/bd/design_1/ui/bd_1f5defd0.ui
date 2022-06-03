@@ -1,0 +1,49 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.982387",
+   "Default View_TopLeft":"-425,-20",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port port-id_CLK_0 -pg 1 -lvl 0 -x 0 -y 190 -defaultsOSRD
+preplace port port-id_RGB1_Blue_0 -pg 1 -lvl 2 -x 300 -y 170 -defaultsOSRD
+preplace port port-id_RGB1_Green_0 -pg 1 -lvl 2 -x 300 -y 150 -defaultsOSRD
+preplace port port-id_RGB1_Red_0 -pg 1 -lvl 2 -x 300 -y 130 -defaultsOSRD
+preplace port port-id_RGB2_Blue_0 -pg 1 -lvl 2 -x 300 -y 230 -defaultsOSRD
+preplace port port-id_RGB2_Green_0 -pg 1 -lvl 2 -x 300 -y 210 -defaultsOSRD
+preplace port port-id_RGB2_Red_0 -pg 1 -lvl 2 -x 300 -y 190 -defaultsOSRD
+preplace port port-id_UART_TXD_0 -pg 1 -lvl 2 -x 300 -y 110 -defaultsOSRD
+preplace port port-id_ampPWM_0 -pg 1 -lvl 2 -x 300 -y 290 -defaultsOSRD
+preplace port port-id_ampSD_0 -pg 1 -lvl 2 -x 300 -y 310 -defaultsOSRD
+preplace port port-id_micClk_0 -pg 1 -lvl 2 -x 300 -y 250 -defaultsOSRD
+preplace port port-id_micData_0 -pg 1 -lvl 0 -x 0 -y 210 -defaultsOSRD
+preplace port port-id_micLRSel_0 -pg 1 -lvl 2 -x 300 -y 270 -defaultsOSRD
+preplace portBus LED_0 -pg 1 -lvl 2 -x 300 -y 50 -defaultsOSRD
+preplace portBus SSEG_CA_0 -pg 1 -lvl 2 -x 300 -y 70 -defaultsOSRD
+preplace portBus BTN_0 -pg 1 -lvl 0 -x 0 -y 170 -defaultsOSRD
+preplace portBus SSEG_AN_0 -pg 1 -lvl 2 -x 300 -y 90 -defaultsOSRD
+preplace portBus SW_0 -pg 1 -lvl 0 -x 0 -y 150 -defaultsOSRD
+preplace inst GPIO_demo_0 -pg 1 -lvl 1 -x 150 -y 180 -defaultsOSRD
+preplace netloc BTN_0_1 1 0 1 NJ 170
+preplace netloc CLK_0_1 1 0 1 NJ 190
+preplace netloc GPIO_demo_0_LED 1 1 1 NJ 50
+preplace netloc GPIO_demo_0_RGB1_Blue 1 1 1 NJ 170
+preplace netloc GPIO_demo_0_RGB1_Green 1 1 1 NJ 150
+preplace netloc GPIO_demo_0_RGB1_Red 1 1 1 NJ 130
+preplace netloc GPIO_demo_0_RGB2_Blue 1 1 1 NJ 230
+preplace netloc GPIO_demo_0_RGB2_Green 1 1 1 NJ 210
+preplace netloc GPIO_demo_0_RGB2_Red 1 1 1 NJ 190
+preplace netloc GPIO_demo_0_SSEG_AN 1 1 1 NJ 90
+preplace netloc GPIO_demo_0_SSEG_CA 1 1 1 NJ 70
+preplace netloc GPIO_demo_0_UART_TXD 1 1 1 NJ 110
+preplace netloc GPIO_demo_0_ampPWM 1 1 1 NJ 290
+preplace netloc GPIO_demo_0_ampSD 1 1 1 NJ 310
+preplace netloc GPIO_demo_0_micClk 1 1 1 NJ 250
+preplace netloc GPIO_demo_0_micLRSel 1 1 1 NJ 270
+preplace netloc SW_0_1 1 0 1 NJ 150
+preplace netloc micData_0_1 1 0 1 NJ 210
+levelinfo -pg 1 0 150 300
+pagesize -pg 1 -db -bbox -sgen -120 -20 460 510
+"
+}
+0

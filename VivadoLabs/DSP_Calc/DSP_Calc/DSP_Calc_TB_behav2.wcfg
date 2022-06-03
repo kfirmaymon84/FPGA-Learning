@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="DSP_Calc_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="DSP_Calc_TB" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="512.630 ns"></ZoomStartTime>
+      <ZoomEndTime time="666.031 ns"></ZoomEndTime>
+      <Cursor1Time time="572.630 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="206"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="4" />
+   <wvobject fp_name="/DSP_Calc_TB/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DSP_Calc_TB/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="group23" type="group">
+      <wvobject fp_name="/DSP_Calc_TB/DATA_IN_A" type="array">
+         <obj_property name="ElementShortName">DATA_IN_A[15:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_IN_A[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/DATA_IN_B" type="array">
+         <obj_property name="ElementShortName">DATA_IN_B[15:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_IN_B[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/SEL" type="array">
+         <obj_property name="ElementShortName">SEL[2:0]</obj_property>
+         <obj_property name="ObjectShortName">SEL[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/DATA_OUT" type="array">
+         <obj_property name="ElementShortName">DATA_OUT[19:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_OUT[19:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group22" type="group">
+      <obj_property name="label">New Group</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/DSPSUB_A" type="array">
+         <obj_property name="ElementShortName">DSPSUB_A[17:0]</obj_property>
+         <obj_property name="ObjectShortName">DSPSUB_A[17:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/DSPSUB_B" type="array">
+         <obj_property name="ElementShortName">DSPSUB_B[17:0]</obj_property>
+         <obj_property name="ObjectShortName">DSPSUB_B[17:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/DSPSUB_P" type="array">
+         <obj_property name="ElementShortName">DSPSUB_P[35:0]</obj_property>
+         <obj_property name="ObjectShortName">DSPSUB_P[35:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/iteration" type="other">
+         <obj_property name="ElementShortName">iteration</obj_property>
+         <obj_property name="ObjectShortName">iteration</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/state" type="other">
+         <obj_property name="ElementShortName">state</obj_property>
+         <obj_property name="ObjectShortName">state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/divRes" type="array">
+         <obj_property name="ElementShortName">divRes[15:0]</obj_property>
+         <obj_property name="ObjectShortName">divRes[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/DSP_Calc_TB/UUT/isResDivValid" type="logic">
+         <obj_property name="ElementShortName">isResDivValid</obj_property>
+         <obj_property name="ObjectShortName">isResDivValid</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

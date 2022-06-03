@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jun  2 20:35:30 2022" VIVADOVERSION="2021.2">
+
+  <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.0" DEVICE="7a100t" NAME="design_1" PACKAGE="csg324" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="O" LEFT="15" NAME="LED_0" RIGHT="0" SIGIS="undef" SIGNAME="GPIO_demo_0_LED">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="LED"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="SSEG_CA_0" RIGHT="0" SIGIS="undef" SIGNAME="GPIO_demo_0_SSEG_CA">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="SSEG_CA"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="4" NAME="BTN_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_BTN_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="BTN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK_0" SIGIS="clk" SIGNAME="External_Ports_CLK_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="CLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="RGB1_Blue_0" SIGIS="undef" SIGNAME="GPIO_demo_0_RGB1_Blue">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="RGB1_Blue"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="RGB1_Green_0" SIGIS="undef" SIGNAME="GPIO_demo_0_RGB1_Green">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="RGB1_Green"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="RGB1_Red_0" SIGIS="undef" SIGNAME="GPIO_demo_0_RGB1_Red">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="RGB1_Red"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="RGB2_Blue_0" SIGIS="undef" SIGNAME="GPIO_demo_0_RGB2_Blue">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="RGB2_Blue"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="RGB2_Green_0" SIGIS="undef" SIGNAME="GPIO_demo_0_RGB2_Green">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="RGB2_Green"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="RGB2_Red_0" SIGIS="undef" SIGNAME="GPIO_demo_0_RGB2_Red">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="RGB2_Red"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="SSEG_AN_0" RIGHT="0" SIGIS="undef" SIGNAME="GPIO_demo_0_SSEG_AN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="SSEG_AN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="15" NAME="SW_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_SW_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="SW"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="UART_TXD_0" SIGIS="undef" SIGNAME="GPIO_demo_0_UART_TXD">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="UART_TXD"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ampPWM_0" SIGIS="undef" SIGNAME="GPIO_demo_0_ampPWM">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="ampPWM"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ampSD_0" SIGIS="undef" SIGNAME="GPIO_demo_0_ampSD">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="ampSD"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="micClk_0" SIGIS="undef" SIGNAME="GPIO_demo_0_micClk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="micClk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="micData_0" SIGIS="undef" SIGNAME="External_Ports_micData_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="micData"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="micLRSel_0" SIGIS="undef" SIGNAME="GPIO_demo_0_micLRSel">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="GPIO_demo_0" PORT="micLRSel"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/GPIO_demo_0" HWVERSION="1.0" INSTANCE="GPIO_demo_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="GPIO_demo" VLNV="xilinx.com:module_ref:GPIO_demo:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_GPIO_demo_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="15" NAME="SW" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_SW_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SW_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="4" NAME="BTN" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_BTN_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="BTN_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="LED" RIGHT="0" SIGIS="undef" SIGNAME="GPIO_demo_0_LED">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LED_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="SSEG_CA" RIGHT="0" SIGIS="undef" SIGNAME="GPIO_demo_0_SSEG_CA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SSEG_CA_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="SSEG_AN" RIGHT="0" SIGIS="undef" SIGNAME="GPIO_demo_0_SSEG_AN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SSEG_AN_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="UART_TXD" SIGIS="undef" SIGNAME="GPIO_demo_0_UART_TXD">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="UART_TXD_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="RGB1_Red" SIGIS="undef" SIGNAME="GPIO_demo_0_RGB1_Red">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RGB1_Red_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="RGB1_Green" SIGIS="undef" SIGNAME="GPIO_demo_0_RGB1_Green">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RGB1_Green_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="RGB1_Blue" SIGIS="undef" SIGNAME="GPIO_demo_0_RGB1_Blue">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RGB1_Blue_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="RGB2_Red" SIGIS="undef" SIGNAME="GPIO_demo_0_RGB2_Red">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RGB2_Red_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="RGB2_Green" SIGIS="undef" SIGNAME="GPIO_demo_0_RGB2_Green">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RGB2_Green_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="RGB2_Blue" SIGIS="undef" SIGNAME="GPIO_demo_0_RGB2_Blue">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RGB2_Blue_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="micClk" SIGIS="undef" SIGNAME="GPIO_demo_0_micClk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="micClk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="micLRSel" SIGIS="undef" SIGNAME="GPIO_demo_0_micLRSel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="micLRSel_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="micData" SIGIS="undef" SIGNAME="External_Ports_micData_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="micData_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ampPWM" SIGIS="undef" SIGNAME="GPIO_demo_0_ampPWM">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ampPWM_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ampSD" SIGIS="undef" SIGNAME="GPIO_demo_0_ampSD">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ampSD_0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>
