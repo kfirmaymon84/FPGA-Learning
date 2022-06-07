@@ -10,19 +10,19 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="383.500001 us"></ZoomEndTime>
-      <Cursor1Time time="1,425.605200 us"></Cursor1Time>
+      <ZoomStartTime time="4,076,991.984 ns"></ZoomStartTime>
+      <ZoomEndTime time="4,077,375.485 ns"></ZoomEndTime>
+      <Cursor1Time time="4,077,097.560 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="206"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="5" />
-   <wave_markers>
-      <marker time="1425605200" label="" />
-      <marker time="1372280400" label="" />
-   </wave_markers>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/OV7670_Sim_TB/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
    <wvobject fp_name="/OV7670_Sim_TB/PCLK" type="logic">
       <obj_property name="ElementShortName">PCLK</obj_property>
       <obj_property name="ObjectShortName">PCLK</obj_property>
@@ -42,5 +42,26 @@
    <wvobject fp_name="/OV7670_Sim_TB/XCLK" type="logic">
       <obj_property name="ElementShortName">XCLK</obj_property>
       <obj_property name="ObjectShortName">XCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="group11" type="group">
+      <obj_property name="label">New Group</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/OV7670_Sim_TB/UUT/pixleData" type="array">
+         <obj_property name="ElementShortName">pixleData[15:0]</obj_property>
+         <obj_property name="ObjectShortName">pixleData[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/OV7670_Sim_TB/UUT/pixleCounter" type="array">
+         <obj_property name="ElementShortName">pixleCounter[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pixleCounter[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/OV7670_Sim_TB/UUT/isMSB" type="logic">
+         <obj_property name="ElementShortName">isMSB</obj_property>
+         <obj_property name="ObjectShortName">isMSB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/OV7670_Sim_TB/UUT/state" type="other">
+         <obj_property name="ElementShortName">state</obj_property>
+         <obj_property name="ObjectShortName">state</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>

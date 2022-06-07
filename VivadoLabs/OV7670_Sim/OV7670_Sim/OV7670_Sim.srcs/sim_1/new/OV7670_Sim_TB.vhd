@@ -1,4 +1,3 @@
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -6,25 +5,27 @@ use STD.textio.all;
 use ieee.std_logic_textio.all;
 
 entity OV7670_Sim_TB is
---  Port ( );
+    --  Port ( );
 end OV7670_Sim_TB;
 
 architecture Behavioral of OV7670_Sim_TB is
-component OV7670_Sim is
-    Port ( PCLK : in STD_LOGIC;
-           DIN : in STD_LOGIC_VECTOR (7 downto 0);
-           VSYNC : in STD_LOGIC;
-           HS : in STD_LOGIC;
-           XCLK : out STD_LOGIC);
-end component;
+    component OV7670_Sim is
+        Port (RESET: in std_logic;
+             PCLK : in STD_LOGIC;
+             DIN : in STD_LOGIC_VECTOR (7 downto 0);
+             VSYNC : in STD_LOGIC;
+             HS : in STD_LOGIC;
+             XCLK : out STD_LOGIC);
+    end component;
 
+    signal RESET    : std_logic := '0';
     signal PCLK     : STD_LOGIC := '0';
     signal DIN      : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
     signal VSYNC    : STD_LOGIC := '0';
     signal HS       : STD_LOGIC := '0';
     signal XCLK     : STD_LOGIC := '0';
 begin
-    UUT: OV7670_Sim port map (PCLK => PCLK, DIN => DIN, VSYNC => VSYNC, HS => HS, XCLK => XCLK);
+    UUT: OV7670_Sim port map (RESET => RESET, PCLK => PCLK, DIN => DIN, VSYNC => VSYNC, HS => HS, XCLK => XCLK);
 
     process --Read file
         variable ch : character := '?';
@@ -47,11 +48,11 @@ begin
                     HS <= dataRead(10);
                 end if;
                 wait for 20.83 ns;
-            end loop;        
+            end loop;
         end loop;--end while loop
-        
+
         report "End of file" severity FAILURE;
     end process;
-    
+
 
 end Behavioral;
