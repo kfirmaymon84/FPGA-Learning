@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="MicroBlazeTest_app" location="C:/GitHub/FPGA-Learning/VivadoLabs/MicroBlazeTest/MicroBlazeTest/MicroBlazeTestVitis/MicroBlazeTest_app" platform="C:/GitHub/FPGA-Learning/VivadoLabs/MicroBlazeTest/MicroBlazeTest/MicroBlazeTestVitis/MicroBlazeTest/export/MicroBlazeTest/MicroBlazeTest.xpfm" platformUID="xilinx:nexys-a7-100t::0.0(custom)" systemProject="MicroBlazeTest_app_system" sysConfig="MicroBlazeTest" runtime="C/C++" cpu="standalone_domain" cpuInstance="microblaze_0" os="standalone" mssSignature="0f3feac17a149fef539e290c4aa14cb3">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.1265358793">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.1005191817" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

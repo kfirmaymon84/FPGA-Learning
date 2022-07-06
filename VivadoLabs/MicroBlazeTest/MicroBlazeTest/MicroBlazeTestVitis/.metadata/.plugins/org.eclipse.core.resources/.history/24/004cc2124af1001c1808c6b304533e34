@@ -1,0 +1,112 @@
+
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+
+
+#include "xiic.h"
+#include "xil_exception.h"
+#include "xil_printf.h"
+
+
+
+#define IIC_DEVICE_ID	0x4B
+
+int i2cWriteData(u16 ByteCount);
+
+// ADT7420 slave address (0x4B)
+XIic IicInstance;	/* The instance of the IIC device. */
+
+u8 WriteBuffer[] = {0x4;
+volatile u8 TransmitComplete;	/* Flag to check completion of Transmission */
+volatile u8 ReceiveComplete;	/* Flag to check completion of Reception */
+
+int main()
+{
+    init_platform();
+
+    int res = i2cWriteData(1);
+    print("Hello World\n\r");
+    print("Successfully ran Hello World application");
+    cleanup_platform();
+    return 0;
+}
+
+
+int i2cWriteData(u16 ByteCount)
+{
+	int Status;
+
+	/*
+	 * Set the defaults.
+	 */
+	TransmitComplete = 1;
+	IicInstance.Stats.TxErrors = 0;
+
+	/*
+	 * Start the IIC device.
+	 */
+	Status = XIic_Start(&IicInstance);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	/*
+	 * Send the Data.
+	 */
+	Status = XIic_MasterSend(&IicInstance, WriteBuffer, ByteCount);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	/*
+	 * Wait till the transmission is completed.
+	 */
+	while ((TransmitComplete) || (XIic_IsIicBusy(&IicInstance) == TRUE)) {
+		/*
+		 * This condition is required to be checked in the case where we
+		 * are writing two consecutive buffers of data to the EEPROM.
+		 * The EEPROM takes about 2 milliseconds time to update the data
+		 * internally after a STOP has been sent on the bus.
+		 * A NACK will be generated in the case of a second write before
+		 * the EEPROM updates the data internally resulting in a
+		 * Transmission Error.
+		 */
+		if (IicInstance.Stats.TxErrors != 0) {
+
+
+			/*
+			 * Enable the IIC device.
+			 */
+			Status = XIic_Start(&IicInstance);
+			if (Status != XST_SUCCESS) {
+				return XST_FAILURE;
+			}
+
+
+			if (!XIic_IsIicBusy(&IicInstance)) {
+				/*
+				 * Send the Data.
+				 */
+				Status = XIic_MasterSend(&IicInstance,
+							 WriteBuffer,
+							 ByteCount);
+				if (Status == XST_SUCCESS) {
+					IicInstance.Stats.TxErrors = 0;
+				}
+				else {
+				}
+			}
+		}
+	}
+
+	/*
+	 * Stop the IIC device.
+	 */
+	Status = XIic_Stop(&IicInstance);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	return XST_SUCCESS;
+}

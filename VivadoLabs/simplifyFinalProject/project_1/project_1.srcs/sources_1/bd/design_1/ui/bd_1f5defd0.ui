@@ -1,0 +1,57 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.864028",
+   "Default View_TopLeft":"-168,29",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
+#  -string -flagsOSRD
+preplace port port-id_sys_clock -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD
+preplace port port-id_reset -pg 1 -lvl 0 -x 0 -y 210 -defaultsOSRD
+preplace port port-id_HS_0 -pg 1 -lvl 0 -x 0 -y 150 -defaultsOSRD
+preplace port port-id_VSYNC_0 -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD
+preplace port port-id_vga_hs_0 -pg 1 -lvl 4 -x 1090 -y 40 -defaultsOSRD
+preplace port port-id_PCLK_0 -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace port port-id_vga_vs_0 -pg 1 -lvl 4 -x 1090 -y 320 -defaultsOSRD
+preplace port port-id_resend_0 -pg 1 -lvl 0 -x 0 -y 470 -defaultsOSRD
+preplace port port-id_siod_0 -pg 1 -lvl 4 -x 1090 -y 440 -defaultsOSRD
+preplace port port-id_sioc_0 -pg 1 -lvl 4 -x 1090 -y 460 -defaultsOSRD
+preplace port port-id_finished_0 -pg 1 -lvl 4 -x 1090 -y 480 -defaultsOSRD
+preplace port port-id_clk24_MHz_0 -pg 1 -lvl 4 -x 1090 -y 380 -defaultsOSRD
+preplace port port-id_debugLed_0 -pg 1 -lvl 4 -x 1090 -y 230 -defaultsOSRD
+preplace portBus DIN_0 -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
+preplace portBus vga_b_0 -pg 1 -lvl 4 -x 1090 -y 20 -defaultsOSRD
+preplace portBus vga_g_0 -pg 1 -lvl 4 -x 1090 -y 340 -defaultsOSRD
+preplace portBus vga_r_0 -pg 1 -lvl 4 -x 1090 -y 360 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 3 -x 930 -y 200 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 320 -y 350 -defaultsOSRD
+preplace inst i2c_sender_0 -pg 1 -lvl 3 -x 930 -y 500 -defaultsOSRD
+preplace inst cameraAndVGA_Drivers_0 -pg 1 -lvl 2 -x 600 -y 140 -defaultsOSRD
+preplace netloc DIN_0_1 1 0 2 NJ 110 NJ
+preplace netloc HS_0_1 1 0 2 NJ 150 NJ
+preplace netloc Net 1 3 1 1040J 440n
+preplace netloc PCLK_0_1 1 0 3 NJ 90 420J -10 800
+preplace netloc VSYNC_0_1 1 0 2 NJ 130 NJ
+preplace netloc blk_mem_gen_0_doutb 1 1 2 440 290 800J
+preplace netloc cameraAndVGA_Drivers_0_addressRead 1 2 1 790 210n
+preplace netloc cameraAndVGA_Drivers_0_addressWrite 1 2 1 770 140n
+preplace netloc cameraAndVGA_Drivers_0_dataWrite 1 2 1 780 170n
+preplace netloc cameraAndVGA_Drivers_0_debugLed 1 2 2 770J 340 1040J
+preplace netloc cameraAndVGA_Drivers_0_vga_b 1 2 2 760J 20 NJ
+preplace netloc cameraAndVGA_Drivers_0_vga_g 1 2 2 770J 30 1070J
+preplace netloc cameraAndVGA_Drivers_0_vga_hs 1 2 2 780J 40 NJ
+preplace netloc cameraAndVGA_Drivers_0_vga_r 1 2 2 NJ 50 1050J
+preplace netloc cameraAndVGA_Drivers_0_vga_vs 1 2 2 790J 60 1060J
+preplace netloc cameraAndVGA_Drivers_0_wea 1 2 1 780 190n
+preplace netloc clk_wiz_0_clk100_MHz 1 1 2 430 370 790J
+preplace netloc clk_wiz_0_clk24_MHz 1 1 3 420J 380 NJ 380 NJ
+preplace netloc clk_wiz_0_clk25_MHz 1 1 2 420 300 790
+preplace netloc i2c_sender_0_finished 1 3 1 1070J 480n
+preplace netloc i2c_sender_0_sioc 1 3 1 1050J 460n
+preplace netloc resend_0_1 1 0 3 NJ 470 NJ 470 770J
+preplace netloc reset_1 1 0 2 20 210 N
+preplace netloc sys_clock_1 1 0 1 NJ 360
+levelinfo -pg 1 0 320 600 930 1090
+pagesize -pg 1 -db -bbox -sgen -120 -300 1220 580
+"
+}
+0

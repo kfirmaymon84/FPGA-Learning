@@ -1,0 +1,599 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB060C75974665527",
+      "device": "xc7a100tcsg324-1",
+      "gen_directory": "../../../../project_1.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "blk_mem_gen_0": "",
+      "clk_wiz_0": "",
+      "i2c_sender_0": "",
+      "cameraAndVGA_Drivers_0": ""
+    },
+    "ports": {
+      "sys_clock": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_sys_clock",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0"
+          }
+        }
+      },
+      "reset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW"
+          }
+        }
+      },
+      "HS_0": {
+        "direction": "I"
+      },
+      "VSYNC_0": {
+        "direction": "I"
+      },
+      "vga_hs_0": {
+        "direction": "O"
+      },
+      "DIN_0": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "PCLK_0": {
+        "direction": "I"
+      },
+      "vga_vs_0": {
+        "direction": "O"
+      },
+      "vga_b_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "vga_g_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "vga_r_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "resend_0": {
+        "direction": "I"
+      },
+      "siod_0": {
+        "direction": "IO"
+      },
+      "sioc_0": {
+        "direction": "O"
+      },
+      "finished_0": {
+        "direction": "O"
+      },
+      "clk24_MHz_0": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "/clk_wiz_0_clk_out1",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "24000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "debugLed_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "blk_mem_gen_0": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "design_1_blk_mem_gen_0_0",
+        "xci_path": "ip\\design_1_blk_mem_gen_0_0\\design_1_blk_mem_gen_0_0.xci",
+        "inst_hier_path": "blk_mem_gen_0",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../../../frame1_2.coe"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_A": {
+            "value": "Always_Enabled"
+          },
+          "Enable_B": {
+            "value": "Always_Enabled"
+          },
+          "Fill_Remaining_Memory_Locations": {
+            "value": "true"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Memory_Type": {
+            "value": "Simple_Dual_Port_RAM"
+          },
+          "Operating_Mode_A": {
+            "value": "NO_CHANGE"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Read_Width_B": {
+            "value": "12"
+          },
+          "Register_PortB_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
+          "Remaining_Memory_Locations": {
+            "value": "0"
+          },
+          "Use_Byte_Write_Enable": {
+            "value": "false"
+          },
+          "Write_Depth_A": {
+            "value": "307200"
+          },
+          "Write_Width_A": {
+            "value": "12"
+          },
+          "Write_Width_B": {
+            "value": "12"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "design_1_clk_wiz_0_0",
+        "xci_path": "ip\\design_1_clk_wiz_0_0\\design_1_clk_wiz_0_0.xci",
+        "inst_hier_path": "clk_wiz_0",
+        "parameters": {
+          "CLKOUT1_JITTER": {
+            "value": "151.366"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "132.063"
+          },
+          "CLKOUT2_JITTER": {
+            "value": "200.470"
+          },
+          "CLKOUT2_PHASE_ERROR": {
+            "value": "132.063"
+          },
+          "CLKOUT2_REQUESTED_OUT_FREQ": {
+            "value": "25"
+          },
+          "CLKOUT2_USED": {
+            "value": "true"
+          },
+          "CLKOUT3_JITTER": {
+            "value": "202.114"
+          },
+          "CLKOUT3_PHASE_ERROR": {
+            "value": "132.063"
+          },
+          "CLKOUT3_REQUESTED_OUT_FREQ": {
+            "value": "24"
+          },
+          "CLKOUT3_USED": {
+            "value": "true"
+          },
+          "CLK_IN1_BOARD_INTERFACE": {
+            "value": "sys_clock"
+          },
+          "CLK_OUT1_PORT": {
+            "value": "clk100_MHz"
+          },
+          "CLK_OUT2_PORT": {
+            "value": "clk25_MHz"
+          },
+          "CLK_OUT3_PORT": {
+            "value": "clk24_MHz"
+          },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "6.000"
+          },
+          "MMCM_CLKIN1_PERIOD": {
+            "value": "10.0"
+          },
+          "MMCM_CLKIN2_PERIOD": {
+            "value": "10.0"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "6.000"
+          },
+          "MMCM_CLKOUT1_DIVIDE": {
+            "value": "24"
+          },
+          "MMCM_CLKOUT2_DIVIDE": {
+            "value": "25"
+          },
+          "NUM_OUT_CLKS": {
+            "value": "3"
+          },
+          "RESET_BOARD_INTERFACE": {
+            "value": "reset"
+          },
+          "RESET_PORT": {
+            "value": "resetn"
+          },
+          "RESET_TYPE": {
+            "value": "ACTIVE_LOW"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
+      },
+      "i2c_sender_0": {
+        "vlnv": "xilinx.com:module_ref:i2c_sender:1.0",
+        "xci_name": "design_1_i2c_sender_0_0",
+        "xci_path": "ip\\design_1_i2c_sender_0_0\\design_1_i2c_sender_0_0.xci",
+        "inst_hier_path": "i2c_sender_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "i2c_sender",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "siod": {
+            "direction": "IO"
+          },
+          "sioc": {
+            "direction": "O"
+          },
+          "resend": {
+            "direction": "I"
+          },
+          "finished": {
+            "direction": "O"
+          }
+        }
+      },
+      "cameraAndVGA_Drivers_0": {
+        "vlnv": "xilinx.com:module_ref:cameraAndVGA_Drivers:1.0",
+        "xci_name": "design_1_cameraAndVGA_Drivers_0_0",
+        "xci_path": "ip\\design_1_cameraAndVGA_Drivers_0_0\\design_1_cameraAndVGA_Drivers_0_0.xci",
+        "inst_hier_path": "cameraAndVGA_Drivers_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "cameraAndVGA_Drivers",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "vga_r": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "vga_g": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "vga_b": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "vga_hs": {
+            "direction": "O"
+          },
+          "vga_vs": {
+            "direction": "O"
+          },
+          "addressWrite": {
+            "direction": "O",
+            "left": "18",
+            "right": "0"
+          },
+          "dataWrite": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "wea": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "addressRead": {
+            "direction": "O",
+            "left": "18",
+            "right": "0"
+          },
+          "dataRead": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "PCLK": {
+            "direction": "I"
+          },
+          "DIN": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "VSYNC": {
+            "direction": "I"
+          },
+          "HS": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "clk25": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "25000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "debugLed": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "DIN_0_1": {
+        "ports": [
+          "DIN_0",
+          "cameraAndVGA_Drivers_0/DIN"
+        ]
+      },
+      "HS_0_1": {
+        "ports": [
+          "HS_0",
+          "cameraAndVGA_Drivers_0/HS"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "siod_0",
+          "i2c_sender_0/siod"
+        ]
+      },
+      "PCLK_0_1": {
+        "ports": [
+          "PCLK_0",
+          "blk_mem_gen_0/clka",
+          "cameraAndVGA_Drivers_0/PCLK"
+        ]
+      },
+      "VSYNC_0_1": {
+        "ports": [
+          "VSYNC_0",
+          "cameraAndVGA_Drivers_0/VSYNC"
+        ]
+      },
+      "blk_mem_gen_0_doutb": {
+        "ports": [
+          "blk_mem_gen_0/doutb",
+          "cameraAndVGA_Drivers_0/dataRead"
+        ]
+      },
+      "cameraAndVGA_Drivers_0_addressRead": {
+        "ports": [
+          "cameraAndVGA_Drivers_0/addressRead",
+          "blk_mem_gen_0/addrb"
+        ]
+      },
+      "cameraAndVGA_Drivers_0_addressWrite": {
+        "ports": [
+          "cameraAndVGA_Drivers_0/addressWrite",
+          "blk_mem_gen_0/addra"
+        ]
+      },
+      "cameraAndVGA_Drivers_0_dataWrite": {
+        "ports": [
+          "cameraAndVGA_Drivers_0/dataWrite",
+          "blk_mem_gen_0/dina"
+        ]
+      },
+      "cameraAndVGA_Drivers_0_debugLed": {
+        "ports": [
+          "cameraAndVGA_Drivers_0/debugLed",
+          "debugLed_0"
+        ]
+      },
+      "cameraAndVGA_Drivers_0_vga_b": {
+        "ports": [
+          "cameraAndVGA_Drivers_0/vga_b",
+          "vga_b_0"
+        ]
+      },
+      "cameraAndVGA_Drivers_0_vga_g": {
+        "ports": [
+          "cameraAndVGA_Drivers_0/vga_g",
+          "vga_g_0"
+        ]
+      },
+      "cameraAndVGA_Drivers_0_vga_hs": {
+        "ports": [
+          "cameraAndVGA_Drivers_0/vga_hs",
+          "vga_hs_0"
+        ]
+      },
+      "cameraAndVGA_Drivers_0_vga_r": {
+        "ports": [
+          "cameraAndVGA_Drivers_0/vga_r",
+          "vga_r_0"
+        ]
+      },
+      "cameraAndVGA_Drivers_0_vga_vs": {
+        "ports": [
+          "cameraAndVGA_Drivers_0/vga_vs",
+          "vga_vs_0"
+        ]
+      },
+      "cameraAndVGA_Drivers_0_wea": {
+        "ports": [
+          "cameraAndVGA_Drivers_0/wea",
+          "blk_mem_gen_0/wea"
+        ]
+      },
+      "clk_wiz_0_clk100_MHz": {
+        "ports": [
+          "clk_wiz_0/clk100_MHz",
+          "i2c_sender_0/clk",
+          "cameraAndVGA_Drivers_0/clk"
+        ]
+      },
+      "clk_wiz_0_clk24_MHz": {
+        "ports": [
+          "clk_wiz_0/clk24_MHz",
+          "clk24_MHz_0"
+        ]
+      },
+      "clk_wiz_0_clk25_MHz": {
+        "ports": [
+          "clk_wiz_0/clk25_MHz",
+          "blk_mem_gen_0/clkb",
+          "cameraAndVGA_Drivers_0/clk25"
+        ]
+      },
+      "i2c_sender_0_finished": {
+        "ports": [
+          "i2c_sender_0/finished",
+          "finished_0"
+        ]
+      },
+      "i2c_sender_0_sioc": {
+        "ports": [
+          "i2c_sender_0/sioc",
+          "sioc_0"
+        ]
+      },
+      "resend_0_1": {
+        "ports": [
+          "resend_0",
+          "i2c_sender_0/resend"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "clk_wiz_0/resetn",
+          "cameraAndVGA_Drivers_0/reset"
+        ]
+      },
+      "sys_clock_1": {
+        "ports": [
+          "sys_clock",
+          "clk_wiz_0/clk_in1"
+        ]
+      }
+    }
+  }
+}
