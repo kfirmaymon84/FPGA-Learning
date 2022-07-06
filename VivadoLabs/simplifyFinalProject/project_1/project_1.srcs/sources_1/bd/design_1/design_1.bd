@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xB060C75974665527",
+      "boundary_crc": "0x28EAB7FC6F09F499",
       "device": "xc7a100tcsg324-1",
       "gen_directory": "../../../../project_1.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -13,8 +13,8 @@
     "design_tree": {
       "blk_mem_gen_0": "",
       "clk_wiz_0": "",
-      "i2c_sender_0": "",
-      "cameraAndVGA_Drivers_0": ""
+      "cameraAndVGA_Drivers_0": "",
+      "i2c_sender_0": ""
     },
     "ports": {
       "sys_clock": {
@@ -128,6 +128,12 @@
       },
       "debugLed_0": {
         "direction": "O"
+      },
+      "startSw": {
+        "direction": "I"
+      },
+      "filterSw": {
+        "direction": "I"
       }
     },
     "components": {
@@ -276,49 +282,6 @@
           }
         }
       },
-      "i2c_sender_0": {
-        "vlnv": "xilinx.com:module_ref:i2c_sender:1.0",
-        "xci_name": "design_1_i2c_sender_0_0",
-        "xci_path": "ip\\design_1_i2c_sender_0_0\\design_1_i2c_sender_0_0.xci",
-        "inst_hier_path": "i2c_sender_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "i2c_sender",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "siod": {
-            "direction": "IO"
-          },
-          "sioc": {
-            "direction": "O"
-          },
-          "resend": {
-            "direction": "I"
-          },
-          "finished": {
-            "direction": "O"
-          }
-        }
-      },
       "cameraAndVGA_Drivers_0": {
         "vlnv": "xilinx.com:module_ref:cameraAndVGA_Drivers:1.0",
         "xci_name": "design_1_cameraAndVGA_Drivers_0_0",
@@ -441,6 +404,58 @@
           },
           "debugLed": {
             "direction": "O"
+          },
+          "startSw": {
+            "direction": "I"
+          },
+          "filterSw": {
+            "direction": "I"
+          },
+          "initFinish": {
+            "direction": "I"
+          }
+        }
+      },
+      "i2c_sender_0": {
+        "vlnv": "xilinx.com:module_ref:i2c_sender:1.0",
+        "xci_name": "design_1_i2c_sender_0_0",
+        "xci_path": "ip\\design_1_i2c_sender_0_0\\design_1_i2c_sender_0_0.xci",
+        "inst_hier_path": "i2c_sender_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "i2c_sender",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "siod": {
+            "direction": "IO"
+          },
+          "sioc": {
+            "direction": "O"
+          },
+          "resend": {
+            "direction": "I"
+          },
+          "finished": {
+            "direction": "O"
           }
         }
       }
@@ -546,8 +561,8 @@
       "clk_wiz_0_clk100_MHz": {
         "ports": [
           "clk_wiz_0/clk100_MHz",
-          "i2c_sender_0/clk",
-          "cameraAndVGA_Drivers_0/clk"
+          "cameraAndVGA_Drivers_0/clk",
+          "i2c_sender_0/clk"
         ]
       },
       "clk_wiz_0_clk24_MHz": {
@@ -563,10 +578,17 @@
           "cameraAndVGA_Drivers_0/clk25"
         ]
       },
+      "filterSw_0_1": {
+        "ports": [
+          "filterSw",
+          "cameraAndVGA_Drivers_0/filterSw"
+        ]
+      },
       "i2c_sender_0_finished": {
         "ports": [
           "i2c_sender_0/finished",
-          "finished_0"
+          "finished_0",
+          "cameraAndVGA_Drivers_0/initFinish"
         ]
       },
       "i2c_sender_0_sioc": {
@@ -586,6 +608,12 @@
           "reset",
           "clk_wiz_0/resetn",
           "cameraAndVGA_Drivers_0/reset"
+        ]
+      },
+      "startSw_0_1": {
+        "ports": [
+          "startSw",
+          "cameraAndVGA_Drivers_0/startSw"
         ]
       },
       "sys_clock_1": {

@@ -71,7 +71,11 @@ ENTITY design_1_cameraAndVGA_Drivers_0_0 IS
     HS : IN STD_LOGIC;
     clk : IN STD_LOGIC;
     clk25 : IN STD_LOGIC;
-    reset : IN STD_LOGIC
+    reset : IN STD_LOGIC;
+    debugLed : OUT STD_LOGIC;
+    startSw : IN STD_LOGIC;
+    filterSw : IN STD_LOGIC;
+    initFinish : IN STD_LOGIC
   );
 END design_1_cameraAndVGA_Drivers_0_0;
 
@@ -96,7 +100,11 @@ ARCHITECTURE design_1_cameraAndVGA_Drivers_0_0_arch OF design_1_cameraAndVGA_Dri
       HS : IN STD_LOGIC;
       clk : IN STD_LOGIC;
       clk25 : IN STD_LOGIC;
-      reset : IN STD_LOGIC
+      reset : IN STD_LOGIC;
+      debugLed : OUT STD_LOGIC;
+      startSw : IN STD_LOGIC;
+      filterSw : IN STD_LOGIC;
+      initFinish : IN STD_LOGIC
     );
   END COMPONENT cameraAndVGA_Drivers;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
@@ -126,6 +134,10 @@ BEGIN
       HS => HS,
       clk => clk,
       clk25 => clk25,
-      reset => reset
+      reset => reset,
+      debugLed => debugLed,
+      startSw => startSw,
+      filterSw => filterSw,
+      initFinish => initFinish
     );
 END design_1_cameraAndVGA_Drivers_0_0_arch;

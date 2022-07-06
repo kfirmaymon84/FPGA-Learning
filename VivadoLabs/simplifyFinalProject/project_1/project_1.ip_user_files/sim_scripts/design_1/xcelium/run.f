@@ -10,16 +10,12 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_blk_mem_gen_0_0/sim/design_1_blk_mem_gen_0_0.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/design_1/ip/design_1_cameraAndVGA_Drivers_0_0/sim/design_1_cameraAndVGA_Drivers_0_0.vhd" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v" \
   "../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_i2c_sender_0_0/sim/design_1_i2c_sender_0_0.vhd" \
+  "../../../bd/design_1/ip/design_1_cameraAndVGA_Drivers_0_0/sim/design_1_cameraAndVGA_Drivers_0_0.vhd" \
   "../../../bd/design_1/sim/design_1.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \

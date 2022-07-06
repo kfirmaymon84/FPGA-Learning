@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
 -- Date        : Sat Jun 25 17:08:08 2022
 -- Host        : KfirLaptop running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/GitHub/FPGA-Learning/VivadoLabs/simplifyFinalProject/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top design_1_clk_wiz_0_0 -prefix
+--               design_1_clk_wiz_0_0_ design_1_clk_wiz_0_0_sim_netlist.vhdl
 -- Design      : design_1_clk_wiz_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,7 +14,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity design_1_clk_wiz_0_0_clk_wiz is
+entity design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz is
   port (
     clk100_MHz : out STD_LOGIC;
     clk25_MHz : out STD_LOGIC;
@@ -23,9 +23,9 @@ entity design_1_clk_wiz_0_0_clk_wiz is
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-end design_1_clk_wiz_0_0_clk_wiz;
+end design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz;
 
-architecture STRUCTURE of design_1_clk_wiz_0_0_clk_wiz is
+architecture STRUCTURE of design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz is
   signal clk100_MHz_design_1_clk_wiz_0_0 : STD_LOGIC;
   signal clk24_MHz_design_1_clk_wiz_0_0 : STD_LOGIC;
   signal clk25_MHz_design_1_clk_wiz_0_0 : STD_LOGIC;
@@ -203,7 +203,7 @@ end design_1_clk_wiz_0_0;
 
 architecture STRUCTURE of design_1_clk_wiz_0_0 is
 begin
-inst: entity work.design_1_clk_wiz_0_0_clk_wiz
+inst: entity work.design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz
      port map (
       clk100_MHz => clk100_MHz,
       clk24_MHz => clk24_MHz,

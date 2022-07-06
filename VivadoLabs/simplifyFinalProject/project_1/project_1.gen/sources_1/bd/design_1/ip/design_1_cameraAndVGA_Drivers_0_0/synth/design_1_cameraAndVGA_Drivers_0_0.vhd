@@ -72,7 +72,10 @@ ENTITY design_1_cameraAndVGA_Drivers_0_0 IS
     clk : IN STD_LOGIC;
     clk25 : IN STD_LOGIC;
     reset : IN STD_LOGIC;
-    debugLed : OUT STD_LOGIC
+    debugLed : OUT STD_LOGIC;
+    startSw : IN STD_LOGIC;
+    filterSw : IN STD_LOGIC;
+    initFinish : IN STD_LOGIC
   );
 END design_1_cameraAndVGA_Drivers_0_0;
 
@@ -98,7 +101,10 @@ ARCHITECTURE design_1_cameraAndVGA_Drivers_0_0_arch OF design_1_cameraAndVGA_Dri
       clk : IN STD_LOGIC;
       clk25 : IN STD_LOGIC;
       reset : IN STD_LOGIC;
-      debugLed : OUT STD_LOGIC
+      debugLed : OUT STD_LOGIC;
+      startSw : IN STD_LOGIC;
+      filterSw : IN STD_LOGIC;
+      initFinish : IN STD_LOGIC
     );
   END COMPONENT cameraAndVGA_Drivers;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -135,6 +141,9 @@ BEGIN
       clk => clk,
       clk25 => clk25,
       reset => reset,
-      debugLed => debugLed
+      debugLed => debugLed,
+      startSw => startSw,
+      filterSw => filterSw,
+      initFinish => initFinish
     );
 END design_1_cameraAndVGA_Drivers_0_0_arch;

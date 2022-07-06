@@ -28,7 +28,10 @@ entity cameraAndVGA_Drivers is
         clk             : in std_logic;
         clk25           : in std_logic;
         reset           : in std_logic;
-        debugLed        : out std_logic
+        debugLed        : out std_logic;
+        startSw         : in std_logic;
+        filterSw        : in std_logic;
+        initFinish      : in std_logic
     );
 end cameraAndVGA_Drivers;
 
@@ -105,13 +108,13 @@ begin
     process(PCLK)-- sample pixles
     begin
         if rising_edge(PCLK) then
-            if RESET = '0' then
+            if RESET = '0' or startSw = '0' or initFinish = '0' then
                 state <= WAIT_FOR_START_FRAME;
                 pixleData       <= (others => '0');
                 wrAddressCounter <= (others => '0');
                 wea <= (others => '0');
                 dataWrite <= (others => '0');
-            else
+            elsif filterSw = '0' then
                 case state is
                     when WAIT_FOR_START_FRAME =>
                         if lastVsyncState = '1' and VSYNC = '0' then
@@ -153,7 +156,10 @@ begin
                     when others =>
                         state <= WAIT_FOR_START_FRAME;
                 end case;
+            else
+                -- filter mode
             end if;
+            
         end if;
     end process;
 

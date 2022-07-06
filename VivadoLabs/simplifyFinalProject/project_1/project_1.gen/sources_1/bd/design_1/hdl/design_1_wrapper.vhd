@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
---Date        : Tue Jul  5 22:25:07 2022
+--Date        : Wed Jul  6 21:25:26 2022
 --Host        : KfirLaptop running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -19,11 +19,13 @@ entity design_1_wrapper is
     VSYNC_0 : in STD_LOGIC;
     clk24_MHz_0 : out STD_LOGIC;
     debugLed_0 : out STD_LOGIC;
+    filterSw : in STD_LOGIC;
     finished_0 : out STD_LOGIC;
     resend_0 : in STD_LOGIC;
     reset : in STD_LOGIC;
     sioc_0 : out STD_LOGIC;
     siod_0 : inout STD_LOGIC;
+    startSw : in STD_LOGIC;
     sys_clock : in STD_LOGIC;
     vga_b_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_g_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -52,7 +54,9 @@ architecture STRUCTURE of design_1_wrapper is
     sioc_0 : out STD_LOGIC;
     finished_0 : out STD_LOGIC;
     clk24_MHz_0 : out STD_LOGIC;
-    debugLed_0 : out STD_LOGIC
+    debugLed_0 : out STD_LOGIC;
+    startSw : in STD_LOGIC;
+    filterSw : in STD_LOGIC
   );
   end component design_1;
 begin
@@ -64,11 +68,13 @@ design_1_i: component design_1
       VSYNC_0 => VSYNC_0,
       clk24_MHz_0 => clk24_MHz_0,
       debugLed_0 => debugLed_0,
+      filterSw => filterSw,
       finished_0 => finished_0,
       resend_0 => resend_0,
       reset => reset,
       sioc_0 => sioc_0,
       siod_0 => siod_0,
+      startSw => startSw,
       sys_clock => sys_clock,
       vga_b_0(3 downto 0) => vga_b_0(3 downto 0),
       vga_g_0(3 downto 0) => vga_g_0(3 downto 0),

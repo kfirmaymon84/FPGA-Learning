@@ -46,61 +46,59 @@ begin
                 when x"00" => sreg <= x"1280"; -- COM7   Reset
                 when x"01" => sreg <= x"1280"; -- COM7   Reset
                 when x"02" => sreg <= x"1204"; -- COM7   Size & RGB output        
-                when x"03" => sreg <= x"3E00"; -- COM14  PCLK scaling off
-                when x"04" => sreg <= x"40D0"; -- COM15  Full 0-255 output, RGB 565
-                when x"05" => sreg <= x"1140";
-                when x"06" => sreg <= x"0C00";
-                when x"07" => sreg <= x"3E00";
-                when x"08" => sreg <= x"8C00";
-                when x"09" => sreg <= x"0400";
-                when x"10" => sreg <= x"40D0";
-                when x"11" => sreg <= x"3A04";
-                when x"12" => sreg <= x"1438";
-                when x"13" => sreg <= x"4F40";
-                when x"14" => sreg <= x"5034";
-                when x"15" => sreg <= x"510C";
-                when x"16" => sreg <= x"5217";
-                when x"17" => sreg <= x"5329";
-                when x"18" => sreg <= x"5440";
-                when x"19" => sreg <= x"581E";
-                when x"20" => sreg <= x"3DC0";
-                when x"21" => sreg <= x"1140";
-                when x"22" => sreg <= x"1711";
-                when x"23" => sreg <= x"1861";
-                when x"24" => sreg <= x"32A4";
-                when x"25" => sreg <= x"1903";
-                when x"26" => sreg <= x"1A7B";
-                when x"27" => sreg <= x"030A";
-                when x"28" => sreg <= x"0E61";
-                when x"29" => sreg <= x"0F4B";
-                when x"30" => sreg <= x"1602";
-                when x"31" => sreg <= x"1E37";
-                when x"32" => sreg <= x"2102";
-                when x"33" => sreg <= x"2291";
-                when x"34" => sreg <= x"2907";
-                when x"35" => sreg <= x"330B";
-                when x"36" => sreg <= x"350B";
-                when x"37" => sreg <= x"371D";
-                when x"38" => sreg <= x"3871";
-                when x"39" => sreg <= x"392A";
-                when x"40" => sreg <= x"3C78";
-                when x"41" => sreg <= x"4D40";
-                when x"42" => sreg <= x"4E20";
-                when x"43" => sreg <= x"6900";
-                when x"44" => sreg <= x"6B0A";
-                when x"45" => sreg <= x"7410";
-                when x"46" => sreg <= x"8D4F";
-                when x"47" => sreg <= x"8E00";
-                when x"48" => sreg <= x"8F00";
-                when x"49" => sreg <= x"9000";
-                when x"50" => sreg <= x"9100";
-                when x"51" => sreg <= x"9600";
-                when x"52" => sreg <= x"9A00";
-                when x"53" => sreg <= x"B084";
-                when x"54" => sreg <= x"B10C";
-                when x"55" => sreg <= x"B20E";
-                when x"56" => sreg <= x"B382";
-                when x"57" => sreg <= x"B80A";
+                when x"03" => sreg <= x"1140";
+                when x"04" => sreg <= x"0C00";
+                when x"05" => sreg <= x"3E00";
+                when x"06" => sreg <= x"8C00";
+                when x"07" => sreg <= x"0400";
+                when x"08" => sreg <= x"40D0";
+                when x"09" => sreg <= x"3A04";
+                when x"0A" => sreg <= x"1438";
+                when x"0B" => sreg <= x"4F40";
+                when x"0C" => sreg <= x"5034";
+                when x"0D" => sreg <= x"510C";
+                when x"0E" => sreg <= x"5217";
+                when x"0F" => sreg <= x"5329";
+                when x"10" => sreg <= x"5440";
+                when x"11" => sreg <= x"581E";
+                when x"12" => sreg <= x"3DC0";
+                when x"13" => sreg <= x"1140";
+                when x"14" => sreg <= x"1711";
+                when x"15" => sreg <= x"1861";
+                when x"16" => sreg <= x"32A4";
+                when x"17" => sreg <= x"1903";
+                when x"18" => sreg <= x"1A7B";
+                when x"19" => sreg <= x"030A";
+                when x"1A" => sreg <= x"0E61";
+                when x"1B" => sreg <= x"0F4B";
+                when x"1C" => sreg <= x"1602";
+                when x"1D" => sreg <= x"1E37";
+                when x"1E" => sreg <= x"2102";
+                when x"1F" => sreg <= x"2291";
+                when x"20" => sreg <= x"2907";
+                when x"21" => sreg <= x"330B";
+                when x"22" => sreg <= x"350B";
+                when x"23" => sreg <= x"371D";
+                when x"24" => sreg <= x"3871";
+                when x"25" => sreg <= x"392A";
+                when x"26" => sreg <= x"3C78";
+                when x"27" => sreg <= x"4D40";
+                when x"28" => sreg <= x"4E20";
+                when x"29" => sreg <= x"6900";
+                when x"2A" => sreg <= x"6B0A";
+                when x"2B" => sreg <= x"7410";
+                when x"2C" => sreg <= x"8D4F";
+                when x"2D" => sreg <= x"8E00";
+                when x"2E" => sreg <= x"8F00";
+                when x"2F" => sreg <= x"9000";
+                when x"30" => sreg <= x"9100";
+                when x"31" => sreg <= x"9600";
+                when x"32" => sreg <= x"9A00";
+                when x"33" => sreg <= x"B084";
+                when x"34" => sreg <= x"B10C";
+                when x"35" => sreg <= x"B20E";
+                when x"36" => sreg <= x"B382";
+                when x"37" => sreg <= x"B80A";
                 when others => sreg <= x"ffff";
             end case;
         end if;
@@ -110,8 +108,8 @@ begin
     process(busy_sr, data_sr(31))
     begin
         if busy_sr(11 downto 10) = "10" or
- busy_sr(20 downto 19) = "10" or
- busy_sr(29 downto 28) = "10"  then
+            busy_sr(20 downto 19) = "10" or
+            busy_sr(29 downto 28) = "10"  then 
             siod <= 'Z';
         else
             siod <= data_sr(31);

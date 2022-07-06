@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
---Date        : Sat Jun 25 17:10:53 2022
+--Date        : Wed Jul  6 20:54:45 2022
 --Host        : KfirLaptop running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -18,11 +18,14 @@ entity design_1 is
     PCLK_0 : in STD_LOGIC;
     VSYNC_0 : in STD_LOGIC;
     clk24_MHz_0 : out STD_LOGIC;
+    debugLed_0 : out STD_LOGIC;
+    filterSw : in STD_LOGIC;
     finished_0 : out STD_LOGIC;
     resend_0 : in STD_LOGIC;
     reset : in STD_LOGIC;
     sioc_0 : out STD_LOGIC;
     siod_0 : inout STD_LOGIC;
+    startSw : in STD_LOGIC;
     sys_clock : in STD_LOGIC;
     vga_b_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_g_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -54,10 +57,19 @@ architecture STRUCTURE of design_1 is
     clk_in1 : in STD_LOGIC;
     clk100_MHz : out STD_LOGIC;
     clk25_MHz : out STD_LOGIC;
-    locked : out STD_LOGIC;
-    clk24_MHz : out STD_LOGIC
+    clk24_MHz : out STD_LOGIC;
+    locked : out STD_LOGIC
   );
   end component design_1_clk_wiz_0_0;
+  component design_1_i2c_sender_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    siod : inout STD_LOGIC;
+    sioc : out STD_LOGIC;
+    resend : in STD_LOGIC;
+    finished : out STD_LOGIC
+  );
+  end component design_1_i2c_sender_0_0;
   component design_1_cameraAndVGA_Drivers_0_0 is
   port (
     vga_r : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -76,18 +88,13 @@ architecture STRUCTURE of design_1 is
     HS : in STD_LOGIC;
     clk : in STD_LOGIC;
     clk25 : in STD_LOGIC;
-    reset : in STD_LOGIC
+    reset : in STD_LOGIC;
+    debugLed : out STD_LOGIC;
+    startSw : in STD_LOGIC;
+    filterSw : in STD_LOGIC;
+    initFinish : in STD_LOGIC
   );
   end component design_1_cameraAndVGA_Drivers_0_0;
-  component design_1_i2c_sender_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    siod : inout STD_LOGIC;
-    sioc : out STD_LOGIC;
-    resend : in STD_LOGIC;
-    finished : out STD_LOGIC
-  );
-  end component design_1_i2c_sender_0_0;
   signal DIN_0_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal HS_0_1 : STD_LOGIC;
   signal Net : STD_LOGIC;
@@ -97,19 +104,22 @@ architecture STRUCTURE of design_1 is
   signal cameraAndVGA_Drivers_0_addressRead : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal cameraAndVGA_Drivers_0_addressWrite : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal cameraAndVGA_Drivers_0_dataWrite : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal cameraAndVGA_Drivers_0_debugLed : STD_LOGIC;
   signal cameraAndVGA_Drivers_0_vga_b : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal cameraAndVGA_Drivers_0_vga_g : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal cameraAndVGA_Drivers_0_vga_hs : STD_LOGIC;
   signal cameraAndVGA_Drivers_0_vga_r : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal cameraAndVGA_Drivers_0_vga_vs : STD_LOGIC;
   signal cameraAndVGA_Drivers_0_wea : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal clk_wiz_0_clk100_MHz : STD_LOGIC;
   signal clk_wiz_0_clk24_MHz : STD_LOGIC;
   signal clk_wiz_0_clk25_MHz : STD_LOGIC;
-  signal clk_wiz_0_clk_out1 : STD_LOGIC;
+  signal filterSw_0_1 : STD_LOGIC;
   signal i2c_sender_0_finished : STD_LOGIC;
   signal i2c_sender_0_sioc : STD_LOGIC;
   signal resend_0_1 : STD_LOGIC;
   signal reset_1 : STD_LOGIC;
+  signal startSw_0_1 : STD_LOGIC;
   signal sys_clock_1 : STD_LOGIC;
   signal NLW_clk_wiz_0_locked_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
@@ -126,10 +136,13 @@ begin
   PCLK_0_1 <= PCLK_0;
   VSYNC_0_1 <= VSYNC_0;
   clk24_MHz_0 <= clk_wiz_0_clk24_MHz;
+  debugLed_0 <= cameraAndVGA_Drivers_0_debugLed;
+  filterSw_0_1 <= filterSw;
   finished_0 <= i2c_sender_0_finished;
   resend_0_1 <= resend_0;
   reset_1 <= reset;
   sioc_0 <= i2c_sender_0_sioc;
+  startSw_0_1 <= startSw;
   sys_clock_1 <= sys_clock;
   vga_b_0(3 downto 0) <= cameraAndVGA_Drivers_0_vga_b(3 downto 0);
   vga_g_0(3 downto 0) <= cameraAndVGA_Drivers_0_vga_g(3 downto 0);
@@ -140,8 +153,8 @@ blk_mem_gen_0: component design_1_blk_mem_gen_0_0
      port map (
       addra(18 downto 0) => cameraAndVGA_Drivers_0_addressWrite(18 downto 0),
       addrb(18 downto 0) => cameraAndVGA_Drivers_0_addressRead(18 downto 0),
-      clka => clk_wiz_0_clk_out1,
-      clkb => clk_wiz_0_clk_out1,
+      clka => PCLK_0_1,
+      clkb => clk_wiz_0_clk25_MHz,
       dina(11 downto 0) => cameraAndVGA_Drivers_0_dataWrite(11 downto 0),
       doutb(11 downto 0) => blk_mem_gen_0_doutb(11 downto 0),
       wea(0) => cameraAndVGA_Drivers_0_wea(0)
@@ -154,11 +167,15 @@ cameraAndVGA_Drivers_0: component design_1_cameraAndVGA_Drivers_0_0
       VSYNC => VSYNC_0_1,
       addressRead(18 downto 0) => cameraAndVGA_Drivers_0_addressRead(18 downto 0),
       addressWrite(18 downto 0) => cameraAndVGA_Drivers_0_addressWrite(18 downto 0),
-      clk => clk_wiz_0_clk_out1,
+      clk => clk_wiz_0_clk100_MHz,
       clk25 => clk_wiz_0_clk25_MHz,
       dataRead(11 downto 0) => blk_mem_gen_0_doutb(11 downto 0),
       dataWrite(11 downto 0) => cameraAndVGA_Drivers_0_dataWrite(11 downto 0),
+      debugLed => cameraAndVGA_Drivers_0_debugLed,
+      filterSw => filterSw_0_1,
+      initFinish => i2c_sender_0_finished,
       reset => reset_1,
+      startSw => startSw_0_1,
       vga_b(3 downto 0) => cameraAndVGA_Drivers_0_vga_b(3 downto 0),
       vga_g(3 downto 0) => cameraAndVGA_Drivers_0_vga_g(3 downto 0),
       vga_hs => cameraAndVGA_Drivers_0_vga_hs,
@@ -168,7 +185,7 @@ cameraAndVGA_Drivers_0: component design_1_cameraAndVGA_Drivers_0_0
     );
 clk_wiz_0: component design_1_clk_wiz_0_0
      port map (
-      clk100_MHz => clk_wiz_0_clk_out1,
+      clk100_MHz => clk_wiz_0_clk100_MHz,
       clk24_MHz => clk_wiz_0_clk24_MHz,
       clk25_MHz => clk_wiz_0_clk25_MHz,
       clk_in1 => sys_clock_1,
@@ -177,7 +194,7 @@ clk_wiz_0: component design_1_clk_wiz_0_0
     );
 i2c_sender_0: component design_1_i2c_sender_0_0
      port map (
-      clk => clk_wiz_0_clk_out1,
+      clk => clk_wiz_0_clk100_MHz,
       finished => i2c_sender_0_finished,
       resend => resend_0_1,
       sioc => i2c_sender_0_sioc,

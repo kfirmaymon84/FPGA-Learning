@@ -12,22 +12,25 @@ end sim_TB;
 architecture Behavioral of sim_TB is
     component design_1_wrapper is
   port (
-    DIN_0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    HS_0 : in STD_LOGIC;
-    PCLK_0 : in STD_LOGIC;
-    VSYNC_0 : in STD_LOGIC;
-    clk24_MHz_0 : out STD_LOGIC;
-    finished_0 : out STD_LOGIC;
-    resend_0 : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    sioc_0 : out STD_LOGIC;
-    siod_0 : inout STD_LOGIC;
     sys_clock : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    HS_0 : in STD_LOGIC;
+    VSYNC_0 : in STD_LOGIC;
+    vga_hs_0 : out STD_LOGIC;
+    DIN_0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    PCLK_0 : in STD_LOGIC;
+    vga_vs_0 : out STD_LOGIC;
     vga_b_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_g_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    vga_hs_0 : out STD_LOGIC;
     vga_r_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    vga_vs_0 : out STD_LOGIC
+    resend_0 : in STD_LOGIC;
+    siod_0 : inout STD_LOGIC;
+    sioc_0 : out STD_LOGIC;
+    finished_0 : out STD_LOGIC;
+    clk24_MHz_0 : out STD_LOGIC;
+    debugLed_0 : out STD_LOGIC;
+    startSw : in STD_LOGIC;
+    filterSw : in STD_LOGIC
   );
 end component;
 
@@ -48,6 +51,9 @@ end component;
     signal vga_hs_0     : STD_LOGIC                         := '0';
     signal vga_r_0      : STD_LOGIC_VECTOR ( 3 downto 0 )   := (others => '0');
     signal vga_vs_0     : STD_LOGIC                         := '0';
+    signal startSw      : STD_LOGIC                         := '0';
+    signal filterSw     : STD_LOGIC                         := '0';
+    
 begin
     UUT : design_1_wrapper port map (
             DIN_0       => DIN_0,
@@ -64,7 +70,9 @@ begin
             vga_g_0     => vga_g_0,
             vga_hs_0    => vga_hs_0,
             vga_r_0     => vga_r_0,
-            vga_vs_0    => vga_vs_0
+            vga_vs_0    => vga_vs_0,
+            startSw     => startSw,
+            filterSw    => filterSw
         );
 
     sys_clock <= not sys_clock after 5 ns;
