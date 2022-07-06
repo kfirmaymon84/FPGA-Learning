@@ -78,7 +78,10 @@ begin
     sys_clock <= not sys_clock after 5 ns;
     reset <= '0','1' after 50 ns;
    
-    resend_0 <= '1', '0' after 1 ms;
+    resend_0    <= '0', '1' after 0.3 ms, '0' after 0.5 ms;
+    
+    startSw     <= '0', '1' after 1 ms;
+    filterSw    <= '0', '1' after 1 ms;
     
     process --Read file
         variable ch : character := '?';

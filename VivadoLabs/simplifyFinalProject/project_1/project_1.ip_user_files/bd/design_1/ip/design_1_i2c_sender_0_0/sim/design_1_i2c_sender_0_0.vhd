@@ -58,6 +58,7 @@ ENTITY design_1_i2c_sender_0_0 IS
     clk : IN STD_LOGIC;
     siod : INOUT STD_LOGIC;
     sioc : OUT STD_LOGIC;
+    reset : IN STD_LOGIC;
     resend : IN STD_LOGIC;
     finished : OUT STD_LOGIC
   );
@@ -71,6 +72,7 @@ ARCHITECTURE design_1_i2c_sender_0_0_arch OF design_1_i2c_sender_0_0 IS
       clk : IN STD_LOGIC;
       siod : INOUT STD_LOGIC;
       sioc : OUT STD_LOGIC;
+      reset : IN STD_LOGIC;
       resend : IN STD_LOGIC;
       finished : OUT STD_LOGIC
     );
@@ -79,7 +81,9 @@ ARCHITECTURE design_1_i2c_sender_0_0_arch OF design_1_i2c_sender_0_0 IS
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_i2c_sender_0_0_arch: ARCHITECTURE IS "module_ref";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF reset: SIGNAL IS "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF reset: SIGNAL IS "xilinx.com:signal:reset:1.0 reset RST";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clk CLK";
 BEGIN
   U0 : i2c_sender
@@ -87,6 +91,7 @@ BEGIN
       clk => clk,
       siod => siod,
       sioc => sioc,
+      reset => reset,
       resend => resend,
       finished => finished
     );

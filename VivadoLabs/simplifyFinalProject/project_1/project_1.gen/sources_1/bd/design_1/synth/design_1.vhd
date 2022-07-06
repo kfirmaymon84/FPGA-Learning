@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
---Date        : Wed Jul  6 21:25:26 2022
+--Date        : Wed Jul  6 23:28:03 2022
 --Host        : KfirLaptop running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -61,6 +61,16 @@ architecture STRUCTURE of design_1 is
     locked : out STD_LOGIC
   );
   end component design_1_clk_wiz_0_0;
+  component design_1_i2c_sender_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    siod : inout STD_LOGIC;
+    sioc : out STD_LOGIC;
+    reset : in STD_LOGIC;
+    resend : in STD_LOGIC;
+    finished : out STD_LOGIC
+  );
+  end component design_1_i2c_sender_0_0;
   component design_1_cameraAndVGA_Drivers_0_0 is
   port (
     vga_r : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -86,15 +96,6 @@ architecture STRUCTURE of design_1 is
     initFinish : in STD_LOGIC
   );
   end component design_1_cameraAndVGA_Drivers_0_0;
-  component design_1_i2c_sender_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    siod : inout STD_LOGIC;
-    sioc : out STD_LOGIC;
-    resend : in STD_LOGIC;
-    finished : out STD_LOGIC
-  );
-  end component design_1_i2c_sender_0_0;
   signal DIN_0_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal HS_0_1 : STD_LOGIC;
   signal Net : STD_LOGIC;
@@ -197,6 +198,7 @@ i2c_sender_0: component design_1_i2c_sender_0_0
       clk => clk_wiz_0_clk100_MHz,
       finished => i2c_sender_0_finished,
       resend => resend_0_1,
+      reset => reset_1,
       sioc => i2c_sender_0_sioc,
       siod => siod_0
     );

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jul  6 21:25:26 2022" VIVADOVERSION="2021.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jul  6 23:28:03 2022" VIVADOVERSION="2021.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.2" DEVICE="7a100t" NAME="design_1" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -12,6 +12,7 @@
     <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_reset">
       <CONNECTIONS>
         <CONNECTION INSTANCE="clk_wiz_0" PORT="resetn"/>
+        <CONNECTION INSTANCE="i2c_sender_0" PORT="reset"/>
         <CONNECTION INSTANCE="cameraAndVGA_Drivers_0" PORT="reset"/>
       </CONNECTIONS>
     </PORT>
@@ -1034,8 +1035,8 @@
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="clk100_MHz" SIGIS="clk" SIGNAME="clk_wiz_0_clk100_MHz">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cameraAndVGA_Drivers_0" PORT="clk"/>
             <CONNECTION INSTANCE="i2c_sender_0" PORT="clk"/>
+            <CONNECTION INSTANCE="cameraAndVGA_Drivers_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="25000000" DIR="O" NAME="clk25_MHz" SIGIS="clk" SIGNAME="clk_wiz_0_clk25_MHz">
@@ -1073,6 +1074,11 @@
         <PORT DIR="O" NAME="sioc" SIGIS="undef" SIGNAME="i2c_sender_0_sioc">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="sioc_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="resend" SIGIS="undef" SIGNAME="External_Ports_resend_0">
