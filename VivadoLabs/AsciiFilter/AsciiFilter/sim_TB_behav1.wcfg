@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="sim_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="sim_TB" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="48,972,599.803 ns"></ZoomStartTime>
+      <ZoomEndTime time="48,973,807.804 ns"></ZoomEndTime>
+      <Cursor1Time time="48,973,606.470 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="287"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/sim_TB/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_TB/clk25" type="logic">
+      <obj_property name="ElementShortName">clk25</obj_property>
+      <obj_property name="ObjectShortName">clk25</obj_property>
+   </wvobject>
+   <wvobject fp_name="group261" type="group">
+      <obj_property name="label">MAIN IO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/sim_TB/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/startSw" type="logic">
+         <obj_property name="ElementShortName">startSw</obj_property>
+         <obj_property name="ObjectShortName">startSw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/debugLed" type="logic">
+         <obj_property name="ElementShortName">debugLed</obj_property>
+         <obj_property name="ObjectShortName">debugLed</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/filterSw" type="logic">
+         <obj_property name="ElementShortName">filterSw</obj_property>
+         <obj_property name="ObjectShortName">filterSw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/initFinish" type="logic">
+         <obj_property name="ElementShortName">initFinish</obj_property>
+         <obj_property name="ObjectShortName">initFinish</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group259" type="group">
+      <obj_property name="label">VGA</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/sim_TB/vga_r" type="array">
+         <obj_property name="ElementShortName">vga_r[3:0]</obj_property>
+         <obj_property name="ObjectShortName">vga_r[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/vga_g" type="array">
+         <obj_property name="ElementShortName">vga_g[3:0]</obj_property>
+         <obj_property name="ObjectShortName">vga_g[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/vga_b" type="array">
+         <obj_property name="ElementShortName">vga_b[3:0]</obj_property>
+         <obj_property name="ObjectShortName">vga_b[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/vga_hs" type="logic">
+         <obj_property name="ElementShortName">vga_hs</obj_property>
+         <obj_property name="ObjectShortName">vga_hs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/vga_vs" type="logic">
+         <obj_property name="ElementShortName">vga_vs</obj_property>
+         <obj_property name="ObjectShortName">vga_vs</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group260" type="group">
+      <obj_property name="label">CAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/sim_TB/PCLK" type="logic">
+         <obj_property name="ElementShortName">PCLK</obj_property>
+         <obj_property name="ObjectShortName">PCLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/DIN" type="array">
+         <obj_property name="ElementShortName">DIN[7:0]</obj_property>
+         <obj_property name="ObjectShortName">DIN[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/VSYNC" type="logic">
+         <obj_property name="ElementShortName">VSYNC</obj_property>
+         <obj_property name="ObjectShortName">VSYNC</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/HS" type="logic">
+         <obj_property name="ElementShortName">HS</obj_property>
+         <obj_property name="ObjectShortName">HS</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/sim_TB/fileWR" type="logic">
+      <obj_property name="ElementShortName">fileWR</obj_property>
+      <obj_property name="ObjectShortName">fileWR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_TB/cnt" type="other">
+      <obj_property name="ElementShortName">cnt</obj_property>
+      <obj_property name="ObjectShortName">cnt</obj_property>
+   </wvobject>
+   <wvobject fp_name="group276" type="group">
+      <obj_property name="label">Full ind</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/sim_TB/UUT/line1_pBoxs" type="array">
+         <obj_property name="ElementShortName">line1_pBoxs[0:127]</obj_property>
+         <obj_property name="ObjectShortName">line1_pBoxs[0:127]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/UUT/line2_pBoxs" type="array">
+         <obj_property name="ElementShortName">line2_pBoxs[0:127]</obj_property>
+         <obj_property name="ObjectShortName">line2_pBoxs[0:127]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/UUT/isBuffer1Full" type="logic">
+         <obj_property name="ElementShortName">isBuffer1Full</obj_property>
+         <obj_property name="ObjectShortName">isBuffer1Full</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/UUT/isLine1BoxsFull" type="logic">
+         <obj_property name="ElementShortName">isLine1BoxsFull</obj_property>
+         <obj_property name="ObjectShortName">isLine1BoxsFull</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/UUT/isLine2BoxsFull" type="logic">
+         <obj_property name="ElementShortName">isLine2BoxsFull</obj_property>
+         <obj_property name="ObjectShortName">isLine2BoxsFull</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/sim_TB/UUT/filterState" type="other">
+      <obj_property name="ElementShortName">filterState</obj_property>
+      <obj_property name="ObjectShortName">filterState</obj_property>
+   </wvobject>
+   <wvobject fp_name="group291" type="group">
+      <obj_property name="label">Filter Vars</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/sim_TB/UUT/pixleInBox_wr" type="array">
+         <obj_property name="ElementShortName">pixleInBox_wr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">pixleInBox_wr[3:0]</obj_property>
+         <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/UUT/lineInBox_wr" type="array">
+         <obj_property name="ElementShortName">lineInBox_wr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">lineInBox_wr[7:0]</obj_property>
+         <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/UUT/boxIdx_wr" type="array">
+         <obj_property name="ElementShortName">boxIdx_wr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">boxIdx_wr[7:0]</obj_property>
+         <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group269" type="group">
+      <obj_property name="label">BRAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="group277" type="group">
+         <obj_property name="label">writeToBram</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/sim_TB/UUT/MEM_MUL/wea" type="array">
+            <obj_property name="ElementShortName">wea[0:0]</obj_property>
+            <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/sim_TB/UUT/MEM_MUL/addra" type="array">
+            <obj_property name="ElementShortName">addra[18:0]</obj_property>
+            <obj_property name="ObjectShortName">addra[18:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/sim_TB/UUT/MEM_MUL/dina" type="array">
+            <obj_property name="ElementShortName">dina[11:0]</obj_property>
+            <obj_property name="ObjectShortName">dina[11:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/sim_TB/UUT/MEM_MUL/clka" type="logic">
+            <obj_property name="ElementShortName">clka</obj_property>
+            <obj_property name="ObjectShortName">clka</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group278" type="group">
+         <obj_property name="label">Read from Bram</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/sim_TB/UUT/MEM_MUL/clkb" type="logic">
+            <obj_property name="ElementShortName">clkb</obj_property>
+            <obj_property name="ObjectShortName">clkb</obj_property>
+         </wvobject>
+         <wvobject fp_name="/sim_TB/UUT/MEM_MUL/addrb" type="array">
+            <obj_property name="ElementShortName">addrb[18:0]</obj_property>
+            <obj_property name="ObjectShortName">addrb[18:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/sim_TB/UUT/MEM_MUL/doutb" type="array">
+            <obj_property name="ElementShortName">doutb[11:0]</obj_property>
+            <obj_property name="ObjectShortName">doutb[11:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/addressRead" type="array">
+         <obj_property name="ElementShortName">addressRead[18:0]</obj_property>
+         <obj_property name="ObjectShortName">addressRead[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_TB/dataRead" type="array">
+         <obj_property name="ElementShortName">dataRead[11:0]</obj_property>
+         <obj_property name="ObjectShortName">dataRead[11:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

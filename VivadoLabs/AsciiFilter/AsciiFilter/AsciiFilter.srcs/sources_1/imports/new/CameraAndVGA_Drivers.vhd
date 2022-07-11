@@ -12,12 +12,8 @@ entity cameraAndVGA_Drivers is
         vga_hs : out std_logic;
         vga_vs : out std_logic;
 
-        -- RAM signals
-        addressWrite    : out std_logic_vector (18 downto 0);
-        dataWrite       : out std_logic_vector (11 downto 0);
-        wea             : out std_logic_vector (0 downto 0);
-        addressRead     : out std_logic_vector (18 downto 0);
-        dataRead        : in std_logic_vector (11 downto 0);
+        addressRead     : in std_logic_vector (18 downto 0);
+        dataRead        : out std_logic_vector (11 downto 0);
 
         -- OV7670 signals
         PCLK : in STD_LOGIC;
@@ -86,25 +82,30 @@ architecture Behavioral of cameraAndVGA_Drivers is
     signal isBuffer1Full : std_logic := '0';
     signal cnt5Pixles    :std_logic_vector (3 downto 0);
 
-
--- FONTS
+    -- send to memory 
+    signal pixleInBox_wr    : std_logic_vector (3 downto 0) := (others =>'0');
+    signal lineInBox_wr     : std_logic_vector (7 downto 0) := (others =>'0');
+    signal boxIdx_wr        : std_logic_vector (7 downto 0) := (others =>'0');
+    signal isFirstWr        : std_logic := '0';
+    -- FONTS
     type font is array (0 to 7) of std_logic_vector (4 downto 0);
     type fontBuffer is array (0 to 13) of font ;
-    constant fonts : fontBuffer :=( 
-    ("00000", "00000", "00000", "00000", "00000", "01100", "01100", "00000" ),  -- . font
-    ("00000", "00000", "00000", "00000", "01100", "00100", "01000", "00000" ),   -- , font
-    ("00000", "00000", "00000", "00000", "11111", "00000", "00000", "00000" ),  -- - font
-    ("00000", "00000", "00000", "11111", "00000", "11111", "00000", "00000" ),  -- = font
-    ("00000", "00000", "00100", "00100", "11111", "00100", "00100", "00000" ),  -- + font
-    ("00000", "01100", "01100", "00000", "01100", "01100", "00000", "00000" ),  -- : font
-    ("00100", "00100", "00100", "00100", "00100", "00000", "00100", "00000" ),  -- ! font
-    ("11111", "00010", "00100", "00010", "00001", "10001", "01110", "00000" ),  -- 3 font
-    ("11111", "10000", "11110", "00001", "00001", "10001", "01110", "00000" ),  -- 5 font
-    ("11111", "10001", "00010", "00100", "01000", "01000", "01000", "00000" ),  -- 7 font
-    ("01110", "10001", "10001", "01111", "00001", "00010", "01100", "00000" ),  -- 9 font
-    ("01010", "01010", "11111", "01010", "11111", "01010", "01010", "00000" ),  -- # font
-    ("01110", "10001", "00001", "11001", "10101", "10101", "01110", "00000" )   -- @ font
-);
+    constant fonts : fontBuffer :=(
+        ("00000", "00000", "00000", "00000", "00000", "01100", "01100", "00000" ),  -- . font
+        ("00000", "00000", "00000", "00000", "01100", "00100", "01000", "00000" ),  -- , font
+        ("00000", "00000", "00000", "00000", "11111", "00000", "00000", "00000" ),  -- - font
+        ("00000", "00000", "00000", "11111", "00000", "11111", "00000", "00000" ),  -- = font
+        ("00000", "00000", "00100", "00100", "11111", "00100", "00100", "00000" ),  -- + font
+        ("00000", "01100", "01100", "00000", "01100", "01100", "00000", "00000" ),  -- : font
+        ("00100", "00100", "00100", "00100", "00100", "00000", "00100", "00000" ),  -- ! font
+        ("00100", "01100", "00100", "00100", "00100", "00100", "01110", "00000" ),  -- 1 font
+        ("11111", "00010", "00100", "00010", "00001", "10001", "01110", "00000" ),  -- 3 font
+        ("11111", "10000", "11110", "00001", "00001", "10001", "01110", "00000" ),  -- 5 font
+        ("11111", "10001", "00010", "00100", "01000", "01000", "01000", "00000" ),  -- 7 font
+        ("01110", "10001", "10001", "01111", "00001", "00010", "01100", "00000" ),  -- 9 font
+        ("01010", "01010", "11111", "01010", "11111", "01010", "01010", "00000" ),  -- # font
+        ("01110", "10001", "00001", "11001", "10101", "10101", "01110", "00000" )   -- @ font
+    );
 
     COMPONENT dsp_macro_0
         PORT (
@@ -117,6 +118,26 @@ architecture Behavioral of cameraAndVGA_Drivers is
     signal A : STD_LOGIC_VECTOR(17 DOWNTO 0);
     signal B : STD_LOGIC_VECTOR(17 DOWNTO 0);
     signal P : STD_LOGIC_VECTOR(35 DOWNTO 0);
+
+    COMPONENT blk_mem_gen_0
+        PORT (
+            clka : IN STD_LOGIC;
+            wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+            addra : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
+            dina : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+            clkb : IN STD_LOGIC;
+            addrb : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
+            doutb : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+        );
+    END COMPONENT;
+    -- RAM signals
+    signal addressWrite    : std_logic_vector (18 downto 0);
+    signal dataWrite       : std_logic_vector (11 downto 0);
+    signal wea             : std_logic_vector (0 downto 0);
+
+    signal addressRead_S     : std_logic_vector (18 downto 0);
+
+
 begin
     DSP_MUL : dsp_macro_0
         PORT MAP (
@@ -126,15 +147,33 @@ begin
             P => P
         );
 
+    --ONLY FOR DEBUG
+    MEM_MUL : blk_mem_gen_0 port map(
+            clka => PCLK,
+            wea => wea,
+            addra => addressWrite,
+            dina => dataWrite,
+            clkb => PCLK,
+            addrb => addressRead_S,
+            doutb => dataRead
+        );
+    addressRead_S <= addressRead;
+    -- END ONLY FOR DEBUG    
+
+
     process(PCLK)-- sample pixles
+        variable temp1 : integer:= 0;
+        variable temp2 : integer:= 0;
+        variable temp3 : integer:= 0;
     begin
         if rising_edge(PCLK) then
             if RESET = '0' or startSw = '0' then --or initFinish = '0' then
                 state <= WAIT_FOR_START_FRAME;
                 pixleData       <= (others => '0');
-                wrAddressCounter <= (others => '0');
+                wrAddressCounter <= (others => '0') ;
                 wea <= (others => '0');
                 dataWrite <= (others => '0');
+
             elsif filterSw = '0' then
 
             else
@@ -199,9 +238,9 @@ begin
                                     line1_pBoxs(to_integer(boxIdx)).greenSum <= line1_pBoxs(to_integer(boxIdx)).greenSum  + ("000000" & pixleData(10 downto 8) & DIN(7));
                                     line1_pBoxs(to_integer(boxIdx)).blueSum  <= line1_pBoxs(to_integer(boxIdx)).blueSum   + ("000000" & DIN(4 downto 1));
                                 else
-                                    line2_pBoxs(to_integer(boxIdx)).redSum   <= line1_pBoxs(to_integer(boxIdx)).redSum    + ("000000" & pixleData(15 downto 12));
-                                    line2_pBoxs(to_integer(boxIdx)).greenSum <= line1_pBoxs(to_integer(boxIdx)).greenSum  + ("000000" & pixleData(10 downto 8) & DIN(7));
-                                    line2_pBoxs(to_integer(boxIdx)).blueSum  <= line1_pBoxs(to_integer(boxIdx)).blueSum   + ("000000" & DIN(4 downto 1));
+                                    line2_pBoxs(to_integer(boxIdx)).redSum   <= line2_pBoxs(to_integer(boxIdx)).redSum    + ("000000" & pixleData(15 downto 12));
+                                    line2_pBoxs(to_integer(boxIdx)).greenSum <= line2_pBoxs(to_integer(boxIdx)).greenSum  + ("000000" & pixleData(10 downto 8) & DIN(7));
+                                    line2_pBoxs(to_integer(boxIdx)).blueSum  <= line2_pBoxs(to_integer(boxIdx)).blueSum   + ("000000" & DIN(4 downto 1));
                                 end if;
                             end if;
                         else
@@ -225,66 +264,6 @@ begin
                             end if;
                         end if;
 
-                        if isLine1BoxsFull = '1' then -- process 8 lines box 1
-                            case filterState is
-                                when FILTER_INIT_ST =>
-                                    filterState <= AVG_COLOR_ST;
-                                    stepCounter <= (others => '0');
-                                    tempNumber <= (others => '0');
-                                when AVG_COLOR_ST => -- avarage rgb color (div by 40)
-                                    if filterBoxIdx < 128 then
-                                        case stepCounter is
-                                            when "0000000000" =>
-                                                A <= "00" & const_DivBy40val;
-                                                B <= "00000000" & line1_pBoxs(filterBoxIdx).redSum;
-                                            when "0000000001"  =>
-                                                B <= "00000000" & line1_pBoxs(filterBoxIdx).greenSum;
-                                                if filterBoxIdx > 0 then
-                                                    line1_pBoxs(filterBoxIdx-1).density <= P(19 downto 16);-- DEBUG
-                                                end if;
-                                            when "0000000010"  =>
-                                                B <= "00000000" & line1_pBoxs(filterBoxIdx).blueSum;
-                                            when "0000000011"  =>
-                                                line1_pBoxs(filterBoxIdx).redAvg <= P(19 downto 16);
-                                                tempNumber <= x"0" & P(19 downto 16);
-                                                B <= (others => '0') ;
-                                            when "0000000100"  =>
-                                                line1_pBoxs(filterBoxIdx).greenAvg <= P(19 downto 16);
-                                                tempNumber <= tempNumber + P(19 downto 16);
-                                            when "0000000101"  =>
-                                                line1_pBoxs(filterBoxIdx).blueAvg <= P(19 downto 16);
-                                                A <= "00" & const_DivBy03val;
-                                                tempNumber <= tempNumber + P(19 downto 16);
-                                            when "0000000110"  =>
-                                                B <= "0000000000" & tempNumber;
-                                            when "0000000111"  =>
-                                                B <= (others => '0');
-                                            when others => stepCounter <= (others => '0');
-                                        end case;
-
-                                        if stepCounter = 7 then
-                                            stepCounter <= (others => '0');   -- avarage the next box
-                                            filterBoxIdx <= filterBoxIdx + 1;
-                                        else
-                                            stepCounter <= stepCounter +1;
-                                        end if;
-                                    else
-                                        filterBoxIdx <= 0;    -- done all boxes
-                                        filterState <= SEND_TO_BRAM_ST;
-                                    end if;
-
-                                when SEND_TO_BRAM_ST =>
-                                    -- SEND_TO_BRAM_ST
-                                    
-                                    
-                                when END_FILTER_ST =>    
-                                    isLine1BoxsFull <= '0'; -- DEBUG
-                                    filterState <= FILTER_INIT_ST;
-                                when others =>
-                                    filterState <= FILTER_INIT_ST;
-                            end case;
-                        end if;
-
                         if VSYNC = '1' then
                             state <= END_FRAME_ST;
                         end if;
@@ -293,6 +272,223 @@ begin
                     when others =>
                         state <= WAIT_FOR_START_FRAME;
                 end case;
+
+
+                ------------------------------------- FILTER CALC
+                if isLine1BoxsFull = '1' then -- process 8 lines box 1
+                    case filterState is
+                        when FILTER_INIT_ST =>
+                            filterState <= AVG_COLOR_ST;
+                            stepCounter <= (others => '0');
+                            tempNumber <= (others => '0');
+                        when AVG_COLOR_ST => -- avarage rgb color (div by 40)
+                            if filterBoxIdx < 128 then
+                                case stepCounter is
+                                    when "0000000000" =>
+                                        A <= "00" & const_DivBy40val;
+                                        B <= "00000000" & line1_pBoxs(filterBoxIdx).redSum;
+                                    when "0000000001"  =>
+                                        B <= "00000000" & line1_pBoxs(filterBoxIdx).greenSum;
+                                        if filterBoxIdx > 0 then
+                                            line1_pBoxs(filterBoxIdx-1).density <= P(19 downto 16);
+                                        end if;
+                                    when "0000000010"  =>
+                                        B <= "00000000" & line1_pBoxs(filterBoxIdx).blueSum;
+                                    when "0000000011"  =>
+                                        line1_pBoxs(filterBoxIdx).redAvg <= P(19 downto 16);
+                                        tempNumber <= x"0" & P(19 downto 16);
+                                        B <= (others => '0') ;
+                                    when "0000000100"  =>
+                                        line1_pBoxs(filterBoxIdx).greenAvg <= P(19 downto 16);
+                                        tempNumber <= tempNumber + P(19 downto 16);
+                                    when "0000000101"  =>
+                                        line1_pBoxs(filterBoxIdx).blueAvg <= P(19 downto 16);
+                                        A <= "00" & const_DivBy03val;
+                                        tempNumber <= tempNumber + P(19 downto 16);
+                                    when "0000000110"  =>
+                                        B <= "0000000000" & tempNumber;
+                                    when "0000000111"  =>
+                                        if filterBoxIdx < 127 then
+                                            B <= (others => '0');
+                                        end if;
+                                    when "0000001000"  =>
+                                    when "0000001001"  =>
+                                        line1_pBoxs(filterBoxIdx).density <= P(19 downto 16);
+                                        filterBoxIdx <= filterBoxIdx +1;
+                                    when others => stepCounter <= (others => '0');
+                                end case;
+
+                                if stepCounter = 7 and filterBoxIdx < 127 then
+                                    stepCounter <= (others => '0');   -- avarage the next box
+                                    filterBoxIdx <= filterBoxIdx + 1;
+                                elsif stepCounter < 10 then
+                                    stepCounter <= stepCounter +1;
+                                end if;
+                            else
+                                filterBoxIdx <= 0;    -- done all boxes
+                                stepCounter <= (others => '0');
+                                filterState <= SEND_TO_BRAM_ST;
+
+                                wea <= (others => '1');
+                                lineInBox_wr <= (others => '0');
+                                pixleInBox_wr <= (others => '0');
+                                boxIdx_wr <= (others => '0');
+
+                            end if;
+
+                        when SEND_TO_BRAM_ST =>
+                            -- SEND_TO_BRAM_ST
+                            -- loop for every pixle in line and for 8 lines
+                            if pixleInBox_wr = 4 then
+                                pixleInBox_wr <= (others => '0');
+                                if boxIdx_wr < 127 then
+                                    boxIdx_wr <= boxIdx_wr + 1;
+                                else
+                                    lineInBox_wr <= lineInBox_wr +1;
+                                    boxIdx_wr <= (others => '0');
+                                end if;
+                            else
+                                pixleInBox_wr <= pixleInBox_wr +1;
+
+                            end if;
+
+                            if lineInBox_wr < 8 then -- Finish 8 lines 
+                                -- SET RGB DATA to write 
+                                if fonts(to_integer(unsigned(line1_pBoxs(to_integer(unsigned(boxIdx_wr))).density)))(to_integer(unsigned(lineInBox_wr )))(to_integer(unsigned(pixleInBox_wr))) = '1' then
+                                    dataWrite <=    line1_pBoxs(to_integer(unsigned(boxIdx_wr))).redAvg & line1_pBoxs(to_integer(unsigned(boxIdx_wr))).greenAvg & line1_pBoxs(to_integer(unsigned(boxIdx_wr))).blueAvg;
+                                else
+                                    -- store BLACK PIXLE
+                                    dataWrite <= (others=>'0');
+                                end if;
+                                -- set BRAM address to write
+                                wrAddressCounter <= wrAddressCounter + 1;
+                            else
+                                wea <= (others => '0');
+                                filterState <= END_FILTER_ST;
+                            end if;
+                        when END_FILTER_ST =>
+                            isLine1BoxsFull <= '0';
+                            for idx in 0 to line1_pBoxs'length - 1 loop -- Clear buffer 1
+                                line1_pBoxs(idx).redSum     <= (others => '0');
+                                line1_pBoxs(idx).greenSum   <= (others => '0');
+                                line1_pBoxs(idx).blueSum    <= (others => '0');
+                                line1_pBoxs(idx).redAvg     <= (others => '0');
+                                line1_pBoxs(idx).greenAvg   <= (others => '0');
+                                line1_pBoxs(idx).blueAvg    <= (others => '0');
+                                line1_pBoxs(idx).density    <= (others => '0');
+                            end loop;
+                            filterState <= FILTER_INIT_ST;
+                        when others =>
+                            filterState <= FILTER_INIT_ST;
+                    end case;
+                elsif isLine2BoxsFull = '1' then -- process 8 lines box 2 ------------------------------------- BUFFER 2 JOB
+                    case filterState is
+                        when FILTER_INIT_ST =>
+                            filterState <= AVG_COLOR_ST;
+                            stepCounter <= (others => '0');
+                            tempNumber <= (others => '0');
+                        when AVG_COLOR_ST => -- avarage rgb color (div by 40)
+                            if filterBoxIdx < 128 then
+                                case stepCounter is
+                                    when "0000000000" =>
+                                        A <= "00" & const_DivBy40val;
+                                        B <= "00000000" & line2_pBoxs(filterBoxIdx).redSum;
+                                    when "0000000001"  =>
+                                        B <= "00000000" & line2_pBoxs(filterBoxIdx).greenSum;
+                                        if filterBoxIdx > 0 then
+                                            line2_pBoxs(filterBoxIdx-1).density <= P(19 downto 16);
+                                        end if;
+                                    when "0000000010"  =>
+                                        B <= "00000000" & line2_pBoxs(filterBoxIdx).blueSum;
+                                    when "0000000011"  =>
+                                        line2_pBoxs(filterBoxIdx).redAvg <= P(19 downto 16);
+                                        tempNumber <= x"0" & P(19 downto 16);
+                                        B <= (others => '0') ;
+                                    when "0000000100"  =>
+                                        line2_pBoxs(filterBoxIdx).greenAvg <= P(19 downto 16);
+                                        tempNumber <= tempNumber + P(19 downto 16);
+                                    when "0000000101"  =>
+                                        line2_pBoxs(filterBoxIdx).blueAvg <= P(19 downto 16);
+                                        A <= "00" & const_DivBy03val;
+                                        tempNumber <= tempNumber + P(19 downto 16);
+                                    when "0000000110"  =>
+                                        B <= "0000000000" & tempNumber;
+                                    when "0000000111"  =>
+                                        if filterBoxIdx < 127 then
+                                            B <= (others => '0');
+                                        end if;
+                                    when "0000001000"  =>
+                                    when "0000001001"  =>
+                                        line2_pBoxs(filterBoxIdx).density <= P(19 downto 16);
+                                        filterBoxIdx <= filterBoxIdx +1;
+                                    when others => stepCounter <= (others => '0');
+                                end case;
+
+                                if stepCounter = 7 and filterBoxIdx < 127 then
+                                    stepCounter <= (others => '0');   -- avarage the next box
+                                    filterBoxIdx <= filterBoxIdx + 1;
+                                elsif stepCounter < 10 then
+                                    stepCounter <= stepCounter +1;
+                                end if;
+                            else
+                                filterBoxIdx <= 0;    -- done all boxes
+                                stepCounter <= (others => '0');
+                                filterState <= SEND_TO_BRAM_ST;
+
+                                wea <= (others => '1');
+                                lineInBox_wr <= (others => '0');
+                                pixleInBox_wr <= (others => '0');
+                                boxIdx_wr <= (others => '0');
+
+                            end if;
+
+                        when SEND_TO_BRAM_ST =>
+                            -- SEND_TO_BRAM_ST
+                            -- loop for every pixle in line and for 8 lines
+                            if pixleInBox_wr = 4 then
+                                pixleInBox_wr <= (others => '0');
+                                if boxIdx_wr < 127 then
+                                    boxIdx_wr <= boxIdx_wr + 1;
+                                else
+                                    lineInBox_wr <= lineInBox_wr +1;
+                                    boxIdx_wr <= (others => '0');
+
+                                end if;
+                            else
+                                pixleInBox_wr <= pixleInBox_wr +1;
+
+                            end if;
+
+                            if lineInBox_wr < 8 then -- Finish 8 lines 
+                                -- SET RGB DATA to write 
+                                if fonts(to_integer(unsigned(line2_pBoxs(to_integer(unsigned(boxIdx_wr))).density)))(to_integer(unsigned(lineInBox_wr )))(to_integer(unsigned(pixleInBox_wr))) = '1' then
+                                    dataWrite <=    line2_pBoxs(to_integer(unsigned(boxIdx_wr))).redAvg & line2_pBoxs(to_integer(unsigned(boxIdx_wr))).greenAvg & line2_pBoxs(to_integer(unsigned(boxIdx_wr))).blueAvg;
+                                else
+                                    -- store BLACK PIXLE
+                                    dataWrite <= (others=>'0');
+                                end if;
+                                -- set BRAM address to write
+                                wrAddressCounter <= wrAddressCounter + 1;
+                            else
+                                wea <= (others => '0');
+                                filterState <= END_FILTER_ST;
+                            end if;
+                        when END_FILTER_ST =>
+                            isLine2BoxsFull <= '0';
+                            for idx in 0 to line2_pBoxs'length - 1 loop -- Clear buffer 1
+                                line2_pBoxs(idx).redSum     <= (others => '0');
+                                line2_pBoxs(idx).greenSum   <= (others => '0');
+                                line2_pBoxs(idx).blueSum    <= (others => '0');
+                                line2_pBoxs(idx).redAvg     <= (others => '0');
+                                line2_pBoxs(idx).greenAvg   <= (others => '0');
+                                line2_pBoxs(idx).blueAvg    <= (others => '0');
+                                line2_pBoxs(idx).density    <= (others => '0');
+                            end loop;
+                            filterState <= FILTER_INIT_ST;
+                        when others =>
+                            filterState <= FILTER_INIT_ST;
+                    end case;
+                end if;
             end if;
 
         end if;

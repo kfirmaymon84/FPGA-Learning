@@ -75,7 +75,10 @@ ENTITY design_1_cameraAndVGA_Drivers_0_0 IS
     debugLed : OUT STD_LOGIC;
     startSw : IN STD_LOGIC;
     filterSw : IN STD_LOGIC;
-    initFinish : IN STD_LOGIC
+    initFinish : IN STD_LOGIC;
+    A : OUT STD_LOGIC_VECTOR(17 DOWNTO 0);
+    B : OUT STD_LOGIC_VECTOR(17 DOWNTO 0);
+    P : IN STD_LOGIC_VECTOR(35 DOWNTO 0)
   );
 END design_1_cameraAndVGA_Drivers_0_0;
 
@@ -104,7 +107,10 @@ ARCHITECTURE design_1_cameraAndVGA_Drivers_0_0_arch OF design_1_cameraAndVGA_Dri
       debugLed : OUT STD_LOGIC;
       startSw : IN STD_LOGIC;
       filterSw : IN STD_LOGIC;
-      initFinish : IN STD_LOGIC
+      initFinish : IN STD_LOGIC;
+      A : OUT STD_LOGIC_VECTOR(17 DOWNTO 0);
+      B : OUT STD_LOGIC_VECTOR(17 DOWNTO 0);
+      P : IN STD_LOGIC_VECTOR(35 DOWNTO 0)
     );
   END COMPONENT cameraAndVGA_Drivers;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
@@ -138,6 +144,9 @@ BEGIN
       debugLed => debugLed,
       startSw => startSw,
       filterSw => filterSw,
-      initFinish => initFinish
+      initFinish => initFinish,
+      A => A,
+      B => B,
+      P => P
     );
 END design_1_cameraAndVGA_Drivers_0_0_arch;

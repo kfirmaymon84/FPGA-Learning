@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jul  6 23:28:03 2022" VIVADOVERSION="2021.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jul 11 18:46:51 2022" VIVADOVERSION="2021.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.2" DEVICE="7a100t" NAME="design_1" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -40,6 +40,7 @@
       <CONNECTIONS>
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clka"/>
         <CONNECTION INSTANCE="cameraAndVGA_Drivers_0" PORT="PCLK"/>
+        <CONNECTION INSTANCE="dsp_macro_0" PORT="CLK"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="vga_vs_0" SIGIS="undef" SIGNAME="cameraAndVGA_Drivers_0_vga_vs">
@@ -438,6 +439,21 @@
         <PORT DIR="I" NAME="initFinish" SIGIS="undef" SIGNAME="i2c_sender_0_finished">
           <CONNECTIONS>
             <CONNECTION INSTANCE="i2c_sender_0" PORT="finished"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="17" NAME="A" RIGHT="0" SIGIS="undef" SIGNAME="cameraAndVGA_Drivers_0_A">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dsp_macro_0" PORT="A"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="17" NAME="B" RIGHT="0" SIGIS="undef" SIGNAME="cameraAndVGA_Drivers_0_B">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dsp_macro_0" PORT="B"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="35" NAME="P" RIGHT="0" SIGIS="undef" SIGNAME="dsp_macro_0_P">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dsp_macro_0" PORT="P"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1051,6 +1067,178 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/dsp_macro_0" HWVERSION="1.0" INSTANCE="dsp_macro_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dsp_macro" VLNV="xilinx.com:ip:dsp_macro:1.0">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=dsp_macro;v=v1_0;d=pg323-dsp-macro.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_VERBOSITY" VALUE="0"/>
+        <PARAMETER NAME="C_MODEL_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_XDEVICEFAMILY" VALUE="artix7"/>
+        <PARAMETER NAME="C_HAS_CE" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_INDEP_CE" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CED" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CEA" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CEB" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CEC" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CECONCAT" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CEM" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CEP" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CESEL" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SCLR" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_INDEP_SCLR" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SCLRD" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SCLRA" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SCLRB" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SCLRC" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SCLRM" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SCLRP" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SCLRCONCAT" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_SCLRSEL" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CARRYCASCIN" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CARRYIN" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_ACIN" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_BCIN" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_PCIN" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_A" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_B" VALUE="1"/>
+        <PARAMETER NAME="C_HAS_D" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CONCAT" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_C" VALUE="0"/>
+        <PARAMETER NAME="C_SQUARE_FCN" VALUE="0"/>
+        <PARAMETER NAME="C_A_WIDTH" VALUE="18"/>
+        <PARAMETER NAME="C_B_WIDTH" VALUE="18"/>
+        <PARAMETER NAME="C_C_WIDTH" VALUE="48"/>
+        <PARAMETER NAME="C_D_WIDTH" VALUE="18"/>
+        <PARAMETER NAME="C_CONCAT_WIDTH" VALUE="48"/>
+        <PARAMETER NAME="C_P_MSB" VALUE="35"/>
+        <PARAMETER NAME="C_P_LSB" VALUE="0"/>
+        <PARAMETER NAME="C_SEL_WIDTH" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_ACOUT" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_BCOUT" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CARRYCASCOUT" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_CARRYOUT" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_PCOUT" VALUE="0"/>
+        <PARAMETER NAME="C_CONSTANT_1" VALUE="1"/>
+        <PARAMETER NAME="C_LATENCY" VALUE="104"/>
+        <PARAMETER NAME="C_OPMODES" VALUE="000100100000010100000000"/>
+        <PARAMETER NAME="C_REG_CONFIG" VALUE="00000000000000000011000000000100"/>
+        <PARAMETER NAME="C_TEST_CORE" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_dsp_macro_0_0"/>
+        <PARAMETER NAME="GUI_Behaviour" VALUE="Coregen"/>
+        <PARAMETER NAME="show_filtered" VALUE="false"/>
+        <PARAMETER NAME="instruction1" VALUE="A*B"/>
+        <PARAMETER NAME="instruction2" VALUE="#"/>
+        <PARAMETER NAME="instruction3" VALUE="#"/>
+        <PARAMETER NAME="instruction4" VALUE="#"/>
+        <PARAMETER NAME="instruction5" VALUE="#"/>
+        <PARAMETER NAME="instruction6" VALUE="#"/>
+        <PARAMETER NAME="instruction7" VALUE="#"/>
+        <PARAMETER NAME="instruction8" VALUE="#"/>
+        <PARAMETER NAME="instruction_list" VALUE="#"/>
+        <PARAMETER NAME="pipeline_options" VALUE="By_Tier"/>
+        <PARAMETER NAME="tier_1" VALUE="false"/>
+        <PARAMETER NAME="tier_2" VALUE="false"/>
+        <PARAMETER NAME="tier_3" VALUE="false"/>
+        <PARAMETER NAME="tier_4" VALUE="true"/>
+        <PARAMETER NAME="tier_5" VALUE="false"/>
+        <PARAMETER NAME="tier_6" VALUE="true"/>
+        <PARAMETER NAME="dreg_1" VALUE="false"/>
+        <PARAMETER NAME="dreg_2" VALUE="false"/>
+        <PARAMETER NAME="dreg_3" VALUE="false"/>
+        <PARAMETER NAME="areg_1" VALUE="false"/>
+        <PARAMETER NAME="areg_2" VALUE="false"/>
+        <PARAMETER NAME="areg_3" VALUE="false"/>
+        <PARAMETER NAME="areg_4" VALUE="true"/>
+        <PARAMETER NAME="breg_1" VALUE="false"/>
+        <PARAMETER NAME="breg_2" VALUE="false"/>
+        <PARAMETER NAME="breg_3" VALUE="false"/>
+        <PARAMETER NAME="breg_4" VALUE="true"/>
+        <PARAMETER NAME="creg_1" VALUE="false"/>
+        <PARAMETER NAME="creg_2" VALUE="false"/>
+        <PARAMETER NAME="creg_3" VALUE="false"/>
+        <PARAMETER NAME="creg_4" VALUE="false"/>
+        <PARAMETER NAME="creg_5" VALUE="false"/>
+        <PARAMETER NAME="concatreg_3" VALUE="false"/>
+        <PARAMETER NAME="concatreg_4" VALUE="false"/>
+        <PARAMETER NAME="concatreg_5" VALUE="false"/>
+        <PARAMETER NAME="opreg_1" VALUE="false"/>
+        <PARAMETER NAME="opreg_2" VALUE="false"/>
+        <PARAMETER NAME="opreg_3" VALUE="false"/>
+        <PARAMETER NAME="opreg_4" VALUE="false"/>
+        <PARAMETER NAME="opreg_5" VALUE="false"/>
+        <PARAMETER NAME="cinreg_1" VALUE="false"/>
+        <PARAMETER NAME="cinreg_2" VALUE="false"/>
+        <PARAMETER NAME="cinreg_3" VALUE="false"/>
+        <PARAMETER NAME="cinreg_4" VALUE="false"/>
+        <PARAMETER NAME="cinreg_5" VALUE="false"/>
+        <PARAMETER NAME="mreg_5" VALUE="false"/>
+        <PARAMETER NAME="preg_6" VALUE="true"/>
+        <PARAMETER NAME="d_width" VALUE="18"/>
+        <PARAMETER NAME="d_binarywidth" VALUE="0"/>
+        <PARAMETER NAME="a_width" VALUE="18"/>
+        <PARAMETER NAME="a_binarywidth" VALUE="0"/>
+        <PARAMETER NAME="b_width" VALUE="18"/>
+        <PARAMETER NAME="b_binarywidth" VALUE="0"/>
+        <PARAMETER NAME="concat_width" VALUE="48"/>
+        <PARAMETER NAME="concat_binarywidth" VALUE="0"/>
+        <PARAMETER NAME="c_width" VALUE="48"/>
+        <PARAMETER NAME="c_binarywidth" VALUE="0"/>
+        <PARAMETER NAME="pcin_binarywidth" VALUE="0"/>
+        <PARAMETER NAME="output_properties" VALUE="Full_Precision"/>
+        <PARAMETER NAME="p_full_width" VALUE="36"/>
+        <PARAMETER NAME="p_width" VALUE="36"/>
+        <PARAMETER NAME="p_binarywidth" VALUE="0"/>
+        <PARAMETER NAME="has_carryout" VALUE="false"/>
+        <PARAMETER NAME="has_acout" VALUE="false"/>
+        <PARAMETER NAME="has_bcout" VALUE="false"/>
+        <PARAMETER NAME="has_carrycascout" VALUE="false"/>
+        <PARAMETER NAME="has_pcout" VALUE="false"/>
+        <PARAMETER NAME="has_ce" VALUE="false"/>
+        <PARAMETER NAME="has_d_ce" VALUE="false"/>
+        <PARAMETER NAME="has_a_ce" VALUE="false"/>
+        <PARAMETER NAME="has_b_ce" VALUE="false"/>
+        <PARAMETER NAME="has_c_ce" VALUE="false"/>
+        <PARAMETER NAME="has_concat_ce" VALUE="false"/>
+        <PARAMETER NAME="has_m_ce" VALUE="false"/>
+        <PARAMETER NAME="has_p_ce" VALUE="false"/>
+        <PARAMETER NAME="has_sel_ce" VALUE="false"/>
+        <PARAMETER NAME="has_sclr" VALUE="false"/>
+        <PARAMETER NAME="has_d_sclr" VALUE="false"/>
+        <PARAMETER NAME="has_a_sclr" VALUE="false"/>
+        <PARAMETER NAME="has_b_sclr" VALUE="false"/>
+        <PARAMETER NAME="has_c_sclr" VALUE="false"/>
+        <PARAMETER NAME="has_concat_sclr" VALUE="false"/>
+        <PARAMETER NAME="has_m_sclr" VALUE="false"/>
+        <PARAMETER NAME="has_p_sclr" VALUE="false"/>
+        <PARAMETER NAME="has_sel_sclr" VALUE="false"/>
+        <PARAMETER NAME="use_dsp48" VALUE="true"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_PCLK_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="PCLK_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="17" NAME="A" RIGHT="0" SIGIS="data" SIGNAME="cameraAndVGA_Drivers_0_A">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="cameraAndVGA_Drivers_0" PORT="A"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="17" NAME="B" RIGHT="0" SIGIS="data" SIGNAME="cameraAndVGA_Drivers_0_B">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="cameraAndVGA_Drivers_0" PORT="B"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="35" NAME="P" RIGHT="0" SIGIS="data" SIGNAME="dsp_macro_0_P">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="cameraAndVGA_Drivers_0" PORT="P"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>

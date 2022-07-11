@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
---Date        : Wed Jul  6 23:28:03 2022
+--Date        : Mon Jul 11 18:46:50 2022
 --Host        : KfirLaptop running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -34,7 +34,7 @@ entity design_1 is
     vga_vs_0 : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=4,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=5,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -71,6 +71,14 @@ architecture STRUCTURE of design_1 is
     finished : out STD_LOGIC
   );
   end component design_1_i2c_sender_0_0;
+  component design_1_dsp_macro_0_0 is
+  port (
+    CLK : in STD_LOGIC;
+    A : in STD_LOGIC_VECTOR ( 17 downto 0 );
+    B : in STD_LOGIC_VECTOR ( 17 downto 0 );
+    P : out STD_LOGIC_VECTOR ( 35 downto 0 )
+  );
+  end component design_1_dsp_macro_0_0;
   component design_1_cameraAndVGA_Drivers_0_0 is
   port (
     vga_r : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -93,7 +101,10 @@ architecture STRUCTURE of design_1 is
     debugLed : out STD_LOGIC;
     startSw : in STD_LOGIC;
     filterSw : in STD_LOGIC;
-    initFinish : in STD_LOGIC
+    initFinish : in STD_LOGIC;
+    A : out STD_LOGIC_VECTOR ( 17 downto 0 );
+    B : out STD_LOGIC_VECTOR ( 17 downto 0 );
+    P : in STD_LOGIC_VECTOR ( 35 downto 0 )
   );
   end component design_1_cameraAndVGA_Drivers_0_0;
   signal DIN_0_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -102,6 +113,8 @@ architecture STRUCTURE of design_1 is
   signal PCLK_0_1 : STD_LOGIC;
   signal VSYNC_0_1 : STD_LOGIC;
   signal blk_mem_gen_0_doutb : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal cameraAndVGA_Drivers_0_A : STD_LOGIC_VECTOR ( 17 downto 0 );
+  signal cameraAndVGA_Drivers_0_B : STD_LOGIC_VECTOR ( 17 downto 0 );
   signal cameraAndVGA_Drivers_0_addressRead : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal cameraAndVGA_Drivers_0_addressWrite : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal cameraAndVGA_Drivers_0_dataWrite : STD_LOGIC_VECTOR ( 11 downto 0 );
@@ -115,6 +128,7 @@ architecture STRUCTURE of design_1 is
   signal clk_wiz_0_clk100_MHz : STD_LOGIC;
   signal clk_wiz_0_clk24_MHz : STD_LOGIC;
   signal clk_wiz_0_clk25_MHz : STD_LOGIC;
+  signal dsp_macro_0_P : STD_LOGIC_VECTOR ( 35 downto 0 );
   signal filterSw_0_1 : STD_LOGIC;
   signal i2c_sender_0_finished : STD_LOGIC;
   signal i2c_sender_0_sioc : STD_LOGIC;
@@ -162,8 +176,11 @@ blk_mem_gen_0: component design_1_blk_mem_gen_0_0
     );
 cameraAndVGA_Drivers_0: component design_1_cameraAndVGA_Drivers_0_0
      port map (
+      A(17 downto 0) => cameraAndVGA_Drivers_0_A(17 downto 0),
+      B(17 downto 0) => cameraAndVGA_Drivers_0_B(17 downto 0),
       DIN(7 downto 0) => DIN_0_1(7 downto 0),
       HS => HS_0_1,
+      P(35 downto 0) => dsp_macro_0_P(35 downto 0),
       PCLK => PCLK_0_1,
       VSYNC => VSYNC_0_1,
       addressRead(18 downto 0) => cameraAndVGA_Drivers_0_addressRead(18 downto 0),
@@ -192,6 +209,13 @@ clk_wiz_0: component design_1_clk_wiz_0_0
       clk_in1 => sys_clock_1,
       locked => NLW_clk_wiz_0_locked_UNCONNECTED,
       resetn => reset_1
+    );
+dsp_macro_0: component design_1_dsp_macro_0_0
+     port map (
+      A(17 downto 0) => cameraAndVGA_Drivers_0_A(17 downto 0),
+      B(17 downto 0) => cameraAndVGA_Drivers_0_B(17 downto 0),
+      CLK => PCLK_0_1,
+      P(35 downto 0) => dsp_macro_0_P(35 downto 0)
     );
 i2c_sender_0: component design_1_i2c_sender_0_0
      port map (

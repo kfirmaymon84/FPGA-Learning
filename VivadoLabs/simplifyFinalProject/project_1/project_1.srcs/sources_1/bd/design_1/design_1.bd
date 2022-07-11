@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x28EAB7FC6F09F499",
+      "boundary_crc": "0x28EAB7FC4E9B5F11",
       "device": "xc7a100tcsg324-1",
       "gen_directory": "../../../../project_1.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -14,6 +14,7 @@
       "blk_mem_gen_0": "",
       "clk_wiz_0": "",
       "i2c_sender_0": "",
+      "dsp_macro_0": "",
       "cameraAndVGA_Drivers_0": ""
     },
     "ports": {
@@ -339,6 +340,62 @@
           }
         }
       },
+      "dsp_macro_0": {
+        "vlnv": "xilinx.com:ip:dsp_macro:1.0",
+        "xci_name": "design_1_dsp_macro_0_0",
+        "xci_path": "ip\\design_1_dsp_macro_0_0\\design_1_dsp_macro_0_0.xci",
+        "inst_hier_path": "dsp_macro_0",
+        "parameters": {
+          "areg_3": {
+            "value": "false"
+          },
+          "areg_4": {
+            "value": "true"
+          },
+          "breg_3": {
+            "value": "false"
+          },
+          "breg_4": {
+            "value": "true"
+          },
+          "creg_3": {
+            "value": "false"
+          },
+          "creg_4": {
+            "value": "false"
+          },
+          "creg_5": {
+            "value": "false"
+          },
+          "instruction1": {
+            "value": "A*B"
+          },
+          "mreg_5": {
+            "value": "false"
+          },
+          "p_binarywidth": {
+            "value": "0"
+          },
+          "p_full_width": {
+            "value": "36"
+          },
+          "p_width": {
+            "value": "36"
+          },
+          "pipeline_options": {
+            "value": "By_Tier"
+          },
+          "preg_6": {
+            "value": "true"
+          },
+          "tier_4": {
+            "value": "true"
+          },
+          "tier_6": {
+            "value": "true"
+          }
+        }
+      },
       "cameraAndVGA_Drivers_0": {
         "vlnv": "xilinx.com:module_ref:cameraAndVGA_Drivers:1.0",
         "xci_name": "design_1_cameraAndVGA_Drivers_0_0",
@@ -470,6 +527,27 @@
           },
           "initFinish": {
             "direction": "I"
+          },
+          "A": {
+            "direction": "O",
+            "left": "17",
+            "right": "0"
+          },
+          "B": {
+            "direction": "O",
+            "left": "17",
+            "right": "0"
+          },
+          "P": {
+            "direction": "I",
+            "left": "35",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency width format long minimum {} maximum {}} value 36} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type generated dependency fractwidth format long minimum {} maximum {}} value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}} DATA_WIDTH 36}",
+                "value_src": "ip_prop"
+              }
+            }
           }
         }
       }
@@ -497,7 +575,8 @@
         "ports": [
           "PCLK_0",
           "blk_mem_gen_0/clka",
-          "cameraAndVGA_Drivers_0/PCLK"
+          "cameraAndVGA_Drivers_0/PCLK",
+          "dsp_macro_0/CLK"
         ]
       },
       "VSYNC_0_1": {
@@ -510,6 +589,18 @@
         "ports": [
           "blk_mem_gen_0/doutb",
           "cameraAndVGA_Drivers_0/dataRead"
+        ]
+      },
+      "cameraAndVGA_Drivers_0_A": {
+        "ports": [
+          "cameraAndVGA_Drivers_0/A",
+          "dsp_macro_0/A"
+        ]
+      },
+      "cameraAndVGA_Drivers_0_B": {
+        "ports": [
+          "cameraAndVGA_Drivers_0/B",
+          "dsp_macro_0/B"
         ]
       },
       "cameraAndVGA_Drivers_0_addressRead": {
@@ -590,6 +681,12 @@
           "clk_wiz_0/clk25_MHz",
           "blk_mem_gen_0/clkb",
           "cameraAndVGA_Drivers_0/clk25"
+        ]
+      },
+      "dsp_macro_0_P": {
+        "ports": [
+          "dsp_macro_0/P",
+          "cameraAndVGA_Drivers_0/P"
         ]
       },
       "filterSw_0_1": {
