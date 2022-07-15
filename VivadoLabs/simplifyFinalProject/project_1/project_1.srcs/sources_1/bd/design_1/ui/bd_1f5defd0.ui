@@ -9,21 +9,21 @@ preplace port port-id_sys_clock -pg 1 -lvl 0 -x 0 -y 450 -defaultsOSRD
 preplace port port-id_reset -pg 1 -lvl 0 -x 0 -y 430 -defaultsOSRD
 preplace port port-id_HS_0 -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD
 preplace port port-id_VSYNC_0 -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
-preplace port port-id_vga_hs_0 -pg 1 -lvl 4 -x 930 -y 110 -defaultsOSRD
+preplace port port-id_vga_hs_0 -pg 1 -lvl 4 -x 940 -y 110 -defaultsOSRD
 preplace port port-id_PCLK_0 -pg 1 -lvl 0 -x 0 -y 190 -defaultsOSRD
-preplace port port-id_vga_vs_0 -pg 1 -lvl 4 -x 930 -y 130 -defaultsOSRD
+preplace port port-id_vga_vs_0 -pg 1 -lvl 4 -x 940 -y 130 -defaultsOSRD
 preplace port port-id_resend_0 -pg 1 -lvl 0 -x 0 -y 540 -defaultsOSRD
-preplace port port-id_siod_0 -pg 1 -lvl 4 -x 930 -y 500 -defaultsOSRD
-preplace port port-id_sioc_0 -pg 1 -lvl 4 -x 930 -y 520 -defaultsOSRD
-preplace port port-id_finished_0 -pg 1 -lvl 4 -x 930 -y 540 -defaultsOSRD
-preplace port port-id_clk24_MHz_0 -pg 1 -lvl 4 -x 930 -y 600 -defaultsOSRD
-preplace port port-id_debugLed_0 -pg 1 -lvl 4 -x 930 -y 440 -defaultsOSRD
+preplace port port-id_siod_0 -pg 1 -lvl 4 -x 940 -y 500 -defaultsOSRD
+preplace port port-id_sioc_0 -pg 1 -lvl 4 -x 940 -y 520 -defaultsOSRD
+preplace port port-id_finished_0 -pg 1 -lvl 4 -x 940 -y 540 -defaultsOSRD
+preplace port port-id_clk24_MHz_0 -pg 1 -lvl 4 -x 940 -y 600 -defaultsOSRD
+preplace port port-id_debugLed_0 -pg 1 -lvl 4 -x 940 -y 440 -defaultsOSRD
 preplace port port-id_startSw -pg 1 -lvl 0 -x 0 -y 330 -defaultsOSRD
 preplace port port-id_filterSw -pg 1 -lvl 0 -x 0 -y 310 -defaultsOSRD
 preplace portBus DIN_0 -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
-preplace portBus vga_b_0 -pg 1 -lvl 4 -x 930 -y 90 -defaultsOSRD
-preplace portBus vga_g_0 -pg 1 -lvl 4 -x 930 -y 70 -defaultsOSRD
-preplace portBus vga_r_0 -pg 1 -lvl 4 -x 930 -y 50 -defaultsOSRD
+preplace portBus vga_b_0 -pg 1 -lvl 4 -x 940 -y 90 -defaultsOSRD
+preplace portBus vga_g_0 -pg 1 -lvl 4 -x 940 -y 70 -defaultsOSRD
+preplace portBus vga_r_0 -pg 1 -lvl 4 -x 940 -y 50 -defaultsOSRD
 preplace inst blk_mem_gen_0 -pg 1 -lvl 3 -x 810 -y 300 -defaultsOSRD
 preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 140 -y 440 -defaultsOSRD
 preplace inst i2c_sender_0 -pg 1 -lvl 2 -x 480 -y 520 -defaultsOSRD
@@ -32,34 +32,34 @@ preplace inst cameraAndVGA_Drivers_0 -pg 1 -lvl 2 -x 480 -y 160 -defaultsOSRD
 preplace netloc DIN_0_1 1 0 2 NJ 90 NJ
 preplace netloc HS_0_1 1 0 2 NJ 130 NJ
 preplace netloc Net 1 2 2 NJ 500 NJ
-preplace netloc PCLK_0_1 1 0 3 20 300 300 330 680
+preplace netloc PCLK_0_1 1 0 3 40 120 300 330 700
 preplace netloc VSYNC_0_1 1 0 2 NJ 110 NJ
 preplace netloc blk_mem_gen_0_doutb 1 1 2 310 380 NJ
-preplace netloc cameraAndVGA_Drivers_0_addressRead 1 2 1 670 210n
-preplace netloc cameraAndVGA_Drivers_0_addressWrite 1 2 1 710 150n
-preplace netloc cameraAndVGA_Drivers_0_dataWrite 1 2 1 700 170n
-preplace netloc cameraAndVGA_Drivers_0_debugLed 1 2 2 660J 440 NJ
+preplace netloc cameraAndVGA_Drivers_0_A 1 0 3 30 340 NJ 340 650
+preplace netloc cameraAndVGA_Drivers_0_B 1 0 3 40 330 250J 350 640
+preplace netloc cameraAndVGA_Drivers_0_addressRead 1 2 1 660 210n
+preplace netloc cameraAndVGA_Drivers_0_addressWrite 1 2 1 700 150n
+preplace netloc cameraAndVGA_Drivers_0_dataWrite 1 2 1 690 170n
+preplace netloc cameraAndVGA_Drivers_0_debugLed 1 2 2 680J 160 920J
 preplace netloc cameraAndVGA_Drivers_0_vga_b 1 2 2 NJ 90 NJ
 preplace netloc cameraAndVGA_Drivers_0_vga_g 1 2 2 NJ 70 NJ
 preplace netloc cameraAndVGA_Drivers_0_vga_hs 1 2 2 NJ 110 NJ
 preplace netloc cameraAndVGA_Drivers_0_vga_r 1 2 2 NJ 50 NJ
 preplace netloc cameraAndVGA_Drivers_0_vga_vs 1 2 2 NJ 130 NJ
-preplace netloc cameraAndVGA_Drivers_0_wea 1 2 1 690 190n
-preplace netloc clk_wiz_0_clk100_MHz 1 1 1 280 150n
-preplace netloc clk_wiz_0_clk24_MHz 1 1 3 250J 600 NJ 600 NJ
-preplace netloc clk_wiz_0_clk25_MHz 1 1 2 250 360 NJ
-preplace netloc filterSw_0_1 1 0 2 NJ 310 270J
-preplace netloc i2c_sender_0_finished 1 1 3 320 390 640 540 NJ
+preplace netloc cameraAndVGA_Drivers_0_wea 1 2 1 670 190n
+preplace netloc clk_wiz_0_clk100_MHz 1 1 1 290 150n
+preplace netloc clk_wiz_0_clk24_MHz 1 1 3 310J 440 NJ 440 910J
+preplace netloc clk_wiz_0_clk25_MHz 1 1 2 260 360 NJ
+preplace netloc dsp_macro_0_P 1 1 1 250 210n
+preplace netloc filterSw_0_1 1 0 2 NJ 310 280J
+preplace netloc i2c_sender_0_finished 1 1 3 320 600 670 540 NJ
 preplace netloc i2c_sender_0_sioc 1 2 2 NJ 520 NJ
 preplace netloc resend_0_1 1 0 2 NJ 540 NJ
-preplace netloc reset_1 1 0 2 30 530 290
-preplace netloc startSw_0_1 1 0 2 NJ 330 260J
+preplace netloc reset_1 1 0 2 30 350 240
+preplace netloc startSw_0_1 1 0 2 20J 320 270J
 preplace netloc sys_clock_1 1 0 1 NJ 450
-preplace netloc cameraAndVGA_Drivers_0_A 1 0 3 30 290 240J 340 650
-preplace netloc cameraAndVGA_Drivers_0_B 1 0 3 40 350 NJ 350 640
-preplace netloc dsp_macro_0_P 1 1 1 240 210n
-levelinfo -pg 1 0 140 480 810 930
-pagesize -pg 1 -db -bbox -sgen -120 0 1060 620
+levelinfo -pg 1 0 140 480 810 940
+pagesize -pg 1 -db -bbox -sgen -120 0 1070 620
 "
 }
 0

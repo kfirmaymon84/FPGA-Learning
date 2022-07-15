@@ -575,8 +575,8 @@
         "ports": [
           "PCLK_0",
           "blk_mem_gen_0/clka",
-          "cameraAndVGA_Drivers_0/PCLK",
-          "dsp_macro_0/CLK"
+          "dsp_macro_0/CLK",
+          "cameraAndVGA_Drivers_0/PCLK"
         ]
       },
       "VSYNC_0_1": {
